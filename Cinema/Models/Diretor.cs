@@ -2,7 +2,7 @@
 {
     public class Diretor
     {
-        public int id { get; set; }
+        public int id_diretor { get; set; }
 
         public string? nome { get; set; }
 

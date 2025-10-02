@@ -2,7 +2,7 @@
 {
     public class Filme
     {
-        public int id { get; set; }
+        public int id_filme { get; set; }
 
         public string? titulos { get; set; }
 

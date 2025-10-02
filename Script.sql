@@ -42,6 +42,12 @@ foreign key(id_filme) references Filmes(id_filme)
 );
 
 
+
+describe Filmes;
+describe Filmes_Genero;
+describe Diretores;
+
+
 -- Criando procedures
 Delimiter $$
 create procedure cad_Usuario(u_nome varchar (100), u_email varchar(100), u_senha varchar(100), u_role varchar(40))

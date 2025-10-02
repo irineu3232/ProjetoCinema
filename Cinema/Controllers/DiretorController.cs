@@ -8,5 +8,15 @@ namespace Cinema.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Criar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Criar()
+
     }
 }

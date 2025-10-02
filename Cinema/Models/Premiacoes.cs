@@ -1,0 +1,11 @@
+﻿namespace Cinema.Models
+{
+    public class Premiacoes
+    {
+        public int id { get; set; }
+
+        public int? filme { get; set; }
+
+        public string? premio { get; set; }
+    }
+}

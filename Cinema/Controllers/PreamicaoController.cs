@@ -85,10 +85,35 @@ namespace Cinema.Controllers
             return View(filmes);
         }
 
-   
-    
+        [HttpGet]
+        public IActionResult Criar()
+        {
+            return View();
+        }
 
-    
-    
+        [HttpPost]
+        public IActionResult Criar()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Editar()
+        {
+            return View();
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public  IActionResult Editar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Excluir()
+        { 
+            return View(); 
+        }
+
     }
 }

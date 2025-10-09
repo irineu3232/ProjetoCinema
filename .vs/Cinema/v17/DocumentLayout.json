@@ -1,53 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\3mod\\Desktop\\Cinema\\",
+  "WorkspaceRootPath": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\controllers\\diretorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\diretorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\controllers\\preamicaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\preamicaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\autenticao\\sessionauthorize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\autenticao\\sessionauthorize.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\autenticao\\sessionkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\autenticao\\sessionkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\controllers\\generocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\generocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\models\\filme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\models\\filme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\models\\filme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\models\\diretor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\models\\diretor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\models\\diretor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\models\\premiacoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\models\\premiacoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\models\\premiacoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\3mod\\desktop\\cinema\\cinema\\models\\genero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\models\\genero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\models\\genero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -58,163 +38,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PreamicaoController.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Controllers\\PreamicaoController.cs",
-              "RelativeDocumentMoniker": "Cinema\\Controllers\\PreamicaoController.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Controllers\\PreamicaoController.cs",
-              "RelativeToolTip": "Cinema\\Controllers\\PreamicaoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:39:14.622Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SessionAuthorize.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Autenticao\\SessionAuthorize.cs",
-              "RelativeDocumentMoniker": "Cinema\\Autenticao\\SessionAuthorize.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Autenticao\\SessionAuthorize.cs",
-              "RelativeToolTip": "Cinema\\Autenticao\\SessionAuthorize.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:37:30.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SessionKey.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Autenticao\\SessionKey.cs",
-              "RelativeDocumentMoniker": "Cinema\\Autenticao\\SessionKey.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Autenticao\\SessionKey.cs",
-              "RelativeToolTip": "Cinema\\Autenticao\\SessionKey.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:37:14.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DiretorController.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Controllers\\DiretorController.cs",
-              "RelativeDocumentMoniker": "Cinema\\Controllers\\DiretorController.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Controllers\\DiretorController.cs",
-              "RelativeToolTip": "Cinema\\Controllers\\DiretorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:38:40.486Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GeneroController.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Controllers\\GeneroController.cs",
-              "RelativeDocumentMoniker": "Cinema\\Controllers\\GeneroController.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Controllers\\GeneroController.cs",
-              "RelativeToolTip": "Cinema\\Controllers\\GeneroController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:38:25.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Controllers\\UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "Cinema\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "Cinema\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAxwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-02T18:38:56.753Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "FilmeController.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Controllers\\FilmeController.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\FilmeController.cs",
               "RelativeDocumentMoniker": "Cinema\\Controllers\\FilmeController.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Controllers\\FilmeController.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\FilmeController.cs",
               "RelativeToolTip": "Cinema\\Controllers\\FilmeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:38:08.709Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T18:38:08.709Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "Genero.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Models\\Genero.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Models\\Genero.cs",
               "RelativeDocumentMoniker": "Cinema\\Models\\Genero.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Models\\Genero.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Models\\Genero.cs",
               "RelativeToolTip": "Cinema\\Models\\Genero.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:26:48.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T18:26:48.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "Premiacoes.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Models\\Premiacoes.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Models\\Premiacoes.cs",
               "RelativeDocumentMoniker": "Cinema\\Models\\Premiacoes.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Models\\Premiacoes.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Models\\Premiacoes.cs",
               "RelativeToolTip": "Cinema\\Models\\Premiacoes.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:26:29.567Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T18:26:29.567Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "Diretor.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Models\\Diretor.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Models\\Diretor.cs",
               "RelativeDocumentMoniker": "Cinema\\Models\\Diretor.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Models\\Diretor.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Models\\Diretor.cs",
               "RelativeToolTip": "Cinema\\Models\\Diretor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:26:13.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T18:26:13.059Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "Filme.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Models\\Filme.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Models\\Filme.cs",
               "RelativeDocumentMoniker": "Cinema\\Models\\Filme.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Models\\Filme.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Models\\Filme.cs",
               "RelativeToolTip": "Cinema\\Models\\Filme.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:25:44.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T18:25:44.982Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Models\\Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "Cinema\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\3mod\\Desktop\\Cinema\\Cinema\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Models\\Usuario.cs",
               "RelativeToolTip": "Cinema\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:25:33.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T18:25:33.836Z"
             }
           ]
         }

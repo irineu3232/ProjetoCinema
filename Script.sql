@@ -93,6 +93,16 @@ begin
 	select Id, Nome, Email, Senha, role, Ativo from Usuario;
 end $$
 
+Delimiter $$
+drop procedure if exists excluir_usuario $$
+create procedure excluir_usuario(u_cod int)
+begin
+	delete from Usuario where id = u_cod;
+end $$
+
+
+
+
 -- Criando Filmes
 describe Filmes;
 
@@ -160,24 +170,41 @@ end $$
 
 
 Delimiter $$
-create procedure deletar_usuario(f_id int)
+create procedure deletar_premiacao(p_id int)
 begin
-	delete from Filmes where id_filme = f_id;
+	delete from Premiacoes where id_premiacao = p_id;
 end $$
 
+
+-- Diretores --
+
+Delimiter $$
+create procedure cad_Diretor(d_nome varchar (100), d_pais varchar(100))
+begin
+
+	if not exists (select id_diretor from Diretores where nome = d_nome )
+					then
+		insert into Diretores(nome, pais_origem)
+						values(d_nome, d_pais);
+	end if;
+end $$
+
+Delimiter $$
+create procedure editar_usuario(d_nome varchar (100), d_pais varchar(100), id_di int)
+begin
+			
+            Update Diretores
+            set nome = d_nome, pais_origem = d_pais
+            where id_diretor = id_di;
+
+end $$
 
 
 Delimiter $$
-create procedure listar_Filme(f_id int)
+create procedure deletar_usuario(d_id int)
 begin
-	select p.id_premiacao, p.id_filme, f.titulo, p.nomePremio, g.id_Gen g.nomeGen, d.nome from Premiacoes p
-    inner join Filmes f  on p.id_filme = f.id_filme
-    inner join Diretores d on f.id_diretor = d.id_diretor
-    inner join Genero g on f.genero = g.id_gen;
-	where f.id_filme = f_id; 
+	delete from Diretores where id_diretor = d_id;
 end $$
-
-
 
 
 

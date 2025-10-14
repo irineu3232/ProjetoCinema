@@ -101,6 +101,16 @@ begin
 end $$
 
 
+Delimiter$$
+drop procedure if exists obter_usuario $$
+create procedure obter_usuario(u_id int)
+begin
+
+	select Id,Nome,Email,Senha,role from Usuario
+	where Id = u_id;
+
+end $$
+
 
 
 -- Criando Filmes

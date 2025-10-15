@@ -29,7 +29,7 @@ namespace Cinema.Controllers
             }
 
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("buscar_usuario") { CommandType = CommandType.StoredProcedure }
+            using var cmd = new MySqlCommand("buscar_usuario_login") { CommandType = CommandType.StoredProcedure };
             cmd.Parameters.AddWithValue("u_email", email);
 
             using var rd = cmd.ExecuteReader();
@@ -55,7 +55,7 @@ namespace Cinema.Controllers
             bool ok;
             try
             {
-                ok = BCrypt.Net.Bcrypt.Verify(senha, senhaHash);
+                ok = BCrypt.Net.BCrypt.Verify(senha, senhaHash);
             }
             catch
             {

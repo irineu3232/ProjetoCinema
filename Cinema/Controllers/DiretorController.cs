@@ -1,5 +1,8 @@
 ﻿using Cinema.Data;
+using Cinema.Models;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace Cinema.Controllers
 {
@@ -10,7 +13,22 @@ namespace Cinema.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var lista = new List<Diretor>();
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("", conn) { CommandType = System.Data.CommandType.StoredProcedure };
+            using var rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                lista.Add(new Diretor
+                {
+                    id_diretor = rd.GetInt32(""),
+                    nome = rd.GetString(""),
+                    pais_origem = rd.GetString("")
+                });
+            }
+            return View(lista);
+
+         
         }
 
         [HttpGet]
@@ -20,26 +38,49 @@ namespace Cinema.Controllers
         }
 
         [HttpPost]
-        public IActionResult Criar()
+        public IActionResult Criar(Diretor diretor)
         {
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("",);
+            cmd.ExecuteNonQuery();
+            
             return View();
         }
 
         [HttpGet]
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
+
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("",);
+            cmd.ExecuteReader();
+            
             return View();
         }
 
         [HttpPost,ValidateAntiForgeryToken]
-        public IActionResult Editar()
+        public IActionResult Editar(int id, Diretor diretor)
         {
+
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("",);
+            cmd.ExecuteNonQuery();
+            
             return View();
         }
 
         [HttpPost]
-        public IActionResult Excluir()
+        public IActionResult Excluir(int id)
         {
+
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("",);
+            cmd.ExecuteNonQuery();
+
             return View();
         }
     }

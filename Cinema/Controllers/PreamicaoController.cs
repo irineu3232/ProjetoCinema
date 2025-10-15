@@ -1,7 +1,9 @@
 ﻿using Cinema.Data;
 using Cinema.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MySql.Data.MySqlClient;
+using System.Data;
 using System.Security.Cryptography;
 
 
@@ -12,7 +14,24 @@ namespace Cinema.Controllers
         private readonly Database db = new Database();
         public IActionResult Index()
         {
-            return View();
+            // Criar um listar filmes que tenhão premiações.
+            // E quando apertar, ser jogado na área de detalhes!
+            var lista = new List<Premiacoes>();
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("", conn) { CommandType = System.Data.CommandType.StoredProcedure };
+            using var rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                lista.Add(new Premiacoes
+                {
+                    id_premiacoes = rd.GetInt32(""),
+                    filme = rd.GetInt32(""),
+                    premio = rd.GetString("")
+                });
+            }
+            return View(lista);
+
+
         }
 
 
@@ -92,28 +111,102 @@ namespace Cinema.Controllers
         }
 
         [HttpPost]
-        public IActionResult Criar()
+        public IActionResult Criar( Premiacoes premio)
         {
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("cad_premiacao", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("p_nomePremio", premio.premio);
+            cmd.Parameters.AddWithValue("p_filme", premio.filme);
+            cmd.ExecuteNonQuery();
+
             return View();
         }
 
         [HttpGet]
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            Premiacoes? premiacao = null;
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("select id_premiacao, id_filme, nomePremiacao from Premiacoes where id_premiacao = @id", conn);
+            cmd.Parameters.AddWithValue("@id", id);
+            var rd = cmd.ExecuteReader();
+
+            if(rd.Read())
+            {
+                premiacao = new Premiacoes{
+
+                    id_premiacoes = rd.GetInt32("id_premiacao"),
+                    filme = rd.GetInt32("id_filme"),
+                    premio = rd.GetString("nomePremiacao")
+                } ;
+            }
+
+
+            ViewBag.Filme = CarregarFilme(conn);
+            ViewBag.Diretor = CarregarDiretor(conn);
+
+            return View( premiacao);
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public  IActionResult Editar()
+        public  IActionResult Editar(int id, Premiacoes premio)
         {
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("editar_premiacao", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("p_nomePremio", premio.premio);
+            cmd.Parameters.AddWithValue("p_filme", premio.filme);
+            cmd.Parameters.AddWithValue("p_id", premio.id_premiacoes);
+            cmd.ExecuteNonQuery();
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult Excluir()
-        { 
-            return View(); 
+        public IActionResult Excluir(int id)
+        {
+            try
+            {
+
+                using var conn = db.GetConnection();
+                using var cmd = new MySqlCommand("deletar_premiacao", conn) { CommandType = CommandType.StoredProcedure };
+                cmd.Parameters.AddWithValue("p_id", id);
+                cmd.ExecuteNonQuery();
+
+                TempData["ok"] = "Premiação excluida";
+            }
+            catch(MySqlException ex)
+            {
+                TempData["ok"] = ex.Message;
+            }
+            return View();
         }
+
+
+
+        private List<SelectListItem> CarregarDiretor(MySqlConnection conn)
+        {
+            var list = new List<SelectListItem>();
+            using var cmd = new MySqlCommand("select id_diretor, nome from Diretores", conn);
+            using var rd = cmd.ExecuteReader();
+            while (rd.Read())
+                list.Add(new SelectListItem { Value = rd.GetInt32("id_diretor").ToString(), Text = rd.GetString("nomeGen") });
+            return list;
+        }
+
+
+        private List<SelectListItem> CarregarFilme(MySqlConnection conn)
+        {
+            var list = new List<SelectListItem>();
+            using var cmd = new MySqlCommand("select id_filme, titulo from Filmes", conn);
+            using var rd = cmd.ExecuteReader();
+            while (rd.Read())
+                list.Add(new SelectListItem { Value = rd.GetInt32("id_filme").ToString(), Text = rd.GetString("titulo") });
+            return list;
+        }
+
+
+
+
 
     }
 }

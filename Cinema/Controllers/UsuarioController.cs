@@ -13,7 +13,23 @@ namespace Cinema.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var lista = new List<Usuario>();
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("listar_usuario", conn) { CommandType = System.Data.CommandType.StoredProcedure };
+            using var rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                lista.Add(new Usuario
+                {
+                    id = rd.GetInt32("Id"),
+                    Nome = rd.GetString("Nome"),
+                    Email = rd.GetString("Email"),
+                    role = rd.GetString("role"),
+                    Ativo = rd.GetString("Ativo")
+                });
+            }
+            return View(lista);
+
         }
 
         [HttpGet]
@@ -52,15 +68,22 @@ namespace Cinema.Controllers
             using var rd = cmd.ExecuteReader();
             if(rd.Read())
             {
-               usuario = new Usuario
-               {
-                   Id = rd.GetInt32(),
-                   Nome.rd.GetString(),
-               }
-               ;
+                usuario = new Usuario
+                {
+                    id = rd.GetInt32("Id"),
+                    Nome = rd.GetString("Nome"),
+                    Email = rd.GetString("Email"),
+                    Senha = rd.GetString("Senha"),
+                    role = rd.GetString("role"),
+                    Ativo = rd.GetString("Ativo")
+                };
+             
             }
-            
-            return View();
+            else
+            {
+                return BadRequest();
+            }
+            return View(usuario);
         }
 
         [HttpPost]
@@ -79,8 +102,11 @@ namespace Cinema.Controllers
         }
 
         [HttpPost]
-        public IActionResult Excluir()
-        { 
+        public IActionResult Excluir(int id)
+        {
+            using var conn = db.GetConnection();
+            using var cmd = new MySqlCommand("deletar_usuario", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("u_id", id);
             return View(); 
         }
 

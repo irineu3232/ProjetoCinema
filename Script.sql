@@ -78,7 +78,7 @@ begin
 end $$
 
 Delimiter $$
-create procedure buscar_usuario (u_email varchar(150))
+create procedure buscar_usuario_login (u_email varchar(150))
 begin
 
 	select Id, Nome , Email, Senha, role, Ativo from Usuarios
@@ -93,15 +93,9 @@ begin
 	select Id, Nome, Email, Senha, role, Ativo from Usuario;
 end $$
 
+
+
 Delimiter $$
-drop procedure if exists excluir_usuario $$
-create procedure excluir_usuario(u_cod int)
-begin
-	delete from Usuario where id = u_cod;
-end $$
-
-
-Delimiter$$
 drop procedure if exists obter_usuario $$
 create procedure obter_usuario(u_id int)
 begin
@@ -149,14 +143,21 @@ end $$
 Delimiter $$
 create procedure listar_Filme()
 begin
-	select f.id_filme, f.titulo, g.nomeGen, d.nomeDiretor from Filmes f
+	select f.id_filme, f.titulo, f.id_diretor, f.genero from Filmes f
     inner join Diretores d on f.id_diretor = d.id_diretor
     inner join Genero g on f.genero = g.id_gen;
 
 end $$
 
 
+Delimiter $$
+drop procedure if exists obter_filme $$
+create procedure obter_filme(f_id int)
+begin
+	Select id_filme, titulo, genero , id_diretor from Filmes
+    where id_filme = f_id;
 
+end $$
 
 -- Premiacao
 

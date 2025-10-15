@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MySql.Data.MySqlClient;
 using System.Data;
-using System.Security.Cryptography;
 
 
 namespace Cinema.Controllers
@@ -12,23 +11,48 @@ namespace Cinema.Controllers
     public class PreamicaoController : Controller
     {
         private readonly Database db = new Database();
-        public IActionResult Index()
+        public IActionResult Index(string? q, string? g)
         {
             // Criar um listar filmes que tenhão premiações.
             // E quando apertar, ser jogado na área de detalhes!
-            var lista = new List<Premiacoes>();
+            var lista = new List<Filme>();
+            var titulos = new List<string>();
+            var genero = new List<string>();
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = System.Data.CommandType.StoredProcedure };
-            using var rd = cmd.ExecuteReader();
-            while (rd.Read())
+            
+            using var cmd = new MySqlCommand("buscar_premiacao", conn) { CommandType = System.Data.CommandType.StoredProcedure };
             {
-                lista.Add(new Premiacoes
+                cmd.Parameters.AddWithValue("p_q", q ?? "");
+                cmd.Parameters.AddWithValue("c_t", g ?? "");
+                using var rd = cmd.ExecuteReader();
+                while(rd.Read())
                 {
-                    id_premiacoes = rd.GetInt32(""),
-                    filme = rd.GetInt32(""),
-                    premio = rd.GetString("")
-                });
+                    lista.Add(new Filme
+                    {
+                        id_filme = rd.GetInt32("id_filme"),
+                        titulos = rd.GetString("titulo")
+                    });
+                }
+
             }
+
+            using (var cmdAll = new MySqlCommand("buscar_premiacao", conn) { CommandType = CommandType.StoredProcedure})
+            {
+                cmdAll.Parameters.AddWithValue("p_q", "");
+                cmdAll.Parameters.AddWithValue("c_t", "");
+                using var rd2 = cmdAll.ExecuteReader();
+                while(rd2.Read())
+                {
+                    var titulo = rd2.GetString("titulo");
+                    if (!string.IsNullOrWhiteSpace(titulo) && !titulos.Contains(titulo)) ;
+                    titulos.Add(titulo);
+                }
+            }
+
+            ViewBag.q = q ?? "";
+            ViewBag.Titulos = titulos;
+            ViewBag.Genero = CarregarGenero(conn);
+
             return View(lista);
 
 
@@ -205,6 +229,16 @@ namespace Cinema.Controllers
         }
 
 
+
+        private List<SelectListItem> CarregarGenero(MySqlConnection conn)
+        {
+            var list = new List<SelectListItem>();
+            using var cmd = new MySqlCommand("select id_gen, nomeGen from Filmes_Genero", conn);
+            using var rd = cmd.ExecuteReader();
+            while (rd.Read())
+                list.Add(new SelectListItem { Value = rd.GetInt32("id_gen").ToString(), Text = rd.GetString("nomeGen") });
+            return list;
+        }
 
 
 

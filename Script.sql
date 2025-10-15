@@ -187,6 +187,25 @@ begin
 end $$
 
 
+Delimiter $$
+Drop procedure if exists buscar_premiacao $$
+create procedure buscar_premiacao(In p_q varchar(200), in c_t varchar(200))
+begin
+	Select 
+	 f.id_filme, f.titulo
+    from Filmes f 
+    inner join Premiacoes p on f.id_filme = p.id_filme
+    inner join Filmes_Genero g on f.genero = g.id_Gen
+    where 
+		(p_q is null or p_q = '' or l.titulo like concat('%', p_q, '%'))
+        or
+        (c_t is null or c_t = '' or g.nomeGen like concat('%',c_t,'%'))
+	Order by f.titulo;
+end $$
+
+
+
+
 -- Diretores --
 
 Delimiter $$
@@ -201,7 +220,7 @@ begin
 end $$
 
 Delimiter $$
-create procedure editar_usuario(d_nome varchar (100), d_pais varchar(100), id_di int)
+create procedure editar_diretor(d_nome varchar (100), d_pais varchar(100), id_di int)
 begin
 			
             Update Diretores
@@ -212,9 +231,79 @@ end $$
 
 
 Delimiter $$
-create procedure deletar_usuario(d_id int)
+create procedure deletar_diretor(d_id int)
 begin
 	delete from Diretores where id_diretor = d_id;
+end $$
+
+
+delimiter $$
+create procedure buscar_diretor(d_id int)
+begin
+	
+    select id_diretor, nome, pais_origem
+    from Diretores where id_diretor = d_id;
+	
+end $$
+
+delimiter $$
+create procedure listar_diretor()
+begin
+	
+		select id_diretor, nome, pais_origem
+        from Diretores;
+    
+end $$
+
+
+-- CADASTRO DE GÊNERO DE FILMES!!!!!!!
+
+
+Delimiter $$
+create procedure cad_genero(g_nome varchar(100))
+begin
+
+	if not exists (select id_Gen from Filmes_Genero where nome = g_nome )
+					then
+		insert into Filmes_Genero(nomeGen)
+						values(g_nome);
+	end if;
+end $$
+
+Delimiter $$
+create procedure editar_genero(g_nome varchar (100), g_id int)
+begin
+			
+            Update Filmes_Genero
+            set nomeGen = g_nome
+            where id_Gen = g_id;
+
+end $$
+
+
+Delimiter $$
+create procedure deletar_genero(g_id int)
+begin
+	delete from Filmes_Genero where id_Gen = g_id;
+end $$
+
+
+delimiter $$
+create procedure buscar_genero(g_id int)
+begin
+	
+    select nomeGen, id_Gen
+    from Filmes_Genero where id_Gen = g_id;
+	
+end $$
+
+delimiter $$
+create procedure listar_genero()
+begin
+	
+		select id_Gen, nomeGen
+        from Filmes_Genero;
+    
 end $$
 
 

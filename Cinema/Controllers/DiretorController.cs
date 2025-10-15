@@ -15,15 +15,15 @@ namespace Cinema.Controllers
         {
             var lista = new List<Diretor>();
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = System.Data.CommandType.StoredProcedure };
+            using var cmd = new MySqlCommand("listar_diretor", conn) { CommandType = System.Data.CommandType.StoredProcedure };
             using var rd = cmd.ExecuteReader();
             while (rd.Read())
             {
                 lista.Add(new Diretor
                 {
-                    id_diretor = rd.GetInt32(""),
-                    nome = rd.GetString(""),
-                    pais_origem = rd.GetString("")
+                    id_diretor = rd.GetInt32("id_diretor"),
+                    nome = rd.GetString("nome"),
+                    pais_origem = rd.GetString("pais_origem")
                 });
             }
             return View(lista);
@@ -41,8 +41,9 @@ namespace Cinema.Controllers
         public IActionResult Criar(Diretor diretor)
         {
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("",);
+            using var cmd = new MySqlCommand("cad_Diretor", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("d_nome",diretor.nome);
+            cmd.Parameters.AddWithValue("d_pais", diretor.pais_origem);
             cmd.ExecuteNonQuery();
             
             return View();
@@ -51,13 +52,23 @@ namespace Cinema.Controllers
         [HttpGet]
         public IActionResult Editar(int id)
         {
-
+            Diretor? diretor = null;
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("",);
-            cmd.ExecuteReader();
+            using var cmd = new MySqlCommand("buscar_diretor", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("d_id", id);
+            var rd = cmd.ExecuteReader();
             
-            return View();
+            while(rd.Read())
+            {
+                diretor = new Diretor
+                {
+                    id_diretor = rd.GetInt32("id_diretor"),
+                    nome = rd.GetString("nome"),
+                    pais_origem = rd.GetString("pais_origem")
+                };
+            }
+
+            return View(diretor);
         }
 
         [HttpPost,ValidateAntiForgeryToken]
@@ -65,8 +76,10 @@ namespace Cinema.Controllers
         {
 
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("",);
+            using var cmd = new MySqlCommand("editar_diretor", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("id_di", diretor.id_diretor);
+            cmd.Parameters.AddWithValue("d_nome", diretor.nome);
+            cmd.Parameters.AddWithValue("d_pais", diretor.pais_origem);
             cmd.ExecuteNonQuery();
             
             return View();
@@ -77,8 +90,8 @@ namespace Cinema.Controllers
         {
 
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("",);
+            using var cmd = new MySqlCommand("deletar_diretor", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("d_id", id);
             cmd.ExecuteNonQuery();
 
             return View();

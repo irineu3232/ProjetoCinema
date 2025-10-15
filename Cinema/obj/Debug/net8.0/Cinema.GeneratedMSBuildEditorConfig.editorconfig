@@ -18,6 +18,42 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\gatin\OneDrive\Área de Trabalho\ProjetoCinema\Cinema
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Diretor/Criar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZXRvclxDcmlhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Diretor/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZXRvclxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Diretor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZXRvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Filme/Criar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbWVcQ3JpYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Filme/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbWVcRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Filme/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Genero/Criar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJvXENyaWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Genero/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJvXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Genero/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,12 +62,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Preamicao/Criar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlYW1pY2FvXENyaWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Preamicao/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlYW1pY2FvXERldGFsaGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Preamicao/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlYW1pY2FvXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Preamicao/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlYW1pY2FvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Usuario/Criar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDcmlhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Usuario/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/Usuario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/gatin/OneDrive/Área de Trabalho/ProjetoCinema/Cinema/Views/_ViewImports.cshtml]

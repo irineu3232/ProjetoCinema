@@ -13,14 +13,14 @@ namespace Cinema.Controllers
         {
             var lista = new List<Genero>();
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = System.Data.CommandType.StoredProcedure };
+            using var cmd = new MySqlCommand("listar_genero", conn) { CommandType = System.Data.CommandType.StoredProcedure };
             using var rd = cmd.ExecuteReader();
             while (rd.Read())
             {
                 lista.Add(new Genero
                 {
-                    id_gen = rd.GetInt32(""),
-                    nomeGen = rd.GetString("")
+                    id_gen = rd.GetInt32("id_Gen"),
+                    nomeGen = rd.GetString("nomeGen")
                 });
             }
             return View(lista);
@@ -36,8 +36,9 @@ namespace Cinema.Controllers
         public IActionResult Criar(Genero genero)
         {
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("",);
+            using var cmd = new MySqlCommand("cad_genero", conn) { CommandType = CommandType.StoredProcedure };
+            var generos = genero.nomeGen.ToLower();
+            cmd.Parameters.AddWithValue("g_nome", generos);
             cmd.ExecuteNonQuery();
 
             return View();
@@ -46,12 +47,22 @@ namespace Cinema.Controllers
         [HttpGet]
         public IActionResult Editar(int id)
         {
+            Genero? genero = null;
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("",);
-            cmd.ExecuteReader();
+            using var cmd = new MySqlCommand("buscar_genero", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("g_id", id);
+            var rd = cmd.ExecuteReader();
+            while(rd.Read())
+            {
+                genero = new Genero
+                {
+                    id_gen = rd.GetInt32("id_Gen"),
+                    nomeGen = rd.GetString("nomeGen")
+                };
+            }
 
-            return View();
+
+            return View(genero);
         }
 
 
@@ -59,8 +70,9 @@ namespace Cinema.Controllers
         public IActionResult Editar(int id, Genero genero)
         {
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("",);
+            using var cmd = new MySqlCommand("editar_genero", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("g_nome", genero.nomeGen);
+            cmd.Parameters.AddWithValue("g_id", id);
             cmd.ExecuteNonQuery();
 
             return View();
@@ -70,8 +82,8 @@ namespace Cinema.Controllers
         public IActionResult Excluir(int id)
         {
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("",);
+            using var cmd = new MySqlCommand("deletar_genero", conn) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("g_id", id);
             cmd.ExecuteNonQuery();
 
             return View();

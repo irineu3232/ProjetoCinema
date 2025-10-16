@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Cinema.Models.Diretor
+
 @{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewData["Title"] = "Editar Diretor";
+
 }
+
+<h2 class=" text-center;">Editar Diretor</h2>
+
+<link href="~/css/acoes.css" rel="stylesheet" />
+
+<form asp-action="Editar" method="post" class="f">
+
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="id_diretor" />
+    <span asp-validation-for="id_diretor"></span>
+
+    <div class="d">
+        <label class="l">Nome:</label>
+        <input asp-for="nome" required class="i" />
+    </div>
+
+    <div>
+        <label>Pais de Origem</label>
+        <input asp-for="pais_origem" required class="i" />
+    </div>
+
+    <button type="submit">Editar</button>
+    <button asp-action="Index">Voltar</button>
+
+</form> 

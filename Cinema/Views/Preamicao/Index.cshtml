@@ -27,27 +27,34 @@
 
     <button type="submit">Buscar</button>
 </form>
-
-<div>
-    @foreach (var l in Model)
-    {
-        <div>
+@if (Model != null || Model.Any())
+{
+    <div>
+        @foreach (var l in Model)
+        {
             <div>
-                @if (!string.IsNullOrWhiteSpace(l.capa))
-                {
-                    <img src="~/@l.capa" alt="@l.titulos" />
-                }
-                else
-                {
-                    <span style="color:#aaa">Sem capa</span>
-                }
-            </div>
-            <div>
-                <a href="../Detalhes/@l.id_filme">@l.titulos</a>
-                <input type="hidden" value="@l.id_filme" />
-            </div>
+                <div>
+                    @if (!string.IsNullOrWhiteSpace(l.capa))
+                    {
+                        <img src="~/@l.capa" alt="@l.titulos" />
+                    }
+                    else
+                    {
+                        <span style="color:#aaa">Sem capa</span>
+                    }
+                </div>
+                <div>
+                    <a href="../Detalhes/@l.id_filme">@l.titulos</a>
+                    <input type="hidden" value="@l.id_filme" />
+                </div>
 
-        </div>
-    }
+            </div>
+        }
 
-</div>
+    </div>
+
+}
+else
+{
+    <p>Nenhum filme premiado encontrado</p>
+}

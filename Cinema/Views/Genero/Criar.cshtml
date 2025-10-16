@@ -1,5 +1,31 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Cinema.Models.Genero
+
 @{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewData["Title"] = "Novo Usuario";
+
 }
+
+<h2 class=" text-center;">Novo Genero de filme</h2>
+
+<link href="~/css/acoes.css" rel="stylesheet" />
+
+<form asp-action="Criar" method="post" class="f">
+
+    @Html.AntiForgeryToken()
+
+
+
+    <div class="d">
+        <label class="l">Genero:</label>
+        <input asp-for="nomeGen" required class="i" />
+    </div>
+
+
+
+    <button type="submit">Cadastrar</button>
+    <button asp-action="Index">Voltar</button>
+
+</form> 

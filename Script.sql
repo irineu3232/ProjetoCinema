@@ -25,6 +25,7 @@ id_filme int primary key auto_increment,
 titulo varchar(100) not null,
 genero int,
 id_diretor int,
+capa varchar(255),
 foreign key (id_diretor) references Diretores(id_diretor)
 );
 
@@ -111,22 +112,22 @@ end $$
 describe Filmes;
 
 Delimiter $$
-create procedure cad_Filme(f_titulo varchar (100), f_genero int, f_diretor int)
+create procedure cad_Filme(f_titulo varchar (100), f_genero int, f_diretor int, f_capa varchar(255))
 begin
 
 	if not exists (select id_filme from Filme where titulo = f_titulo)
 					then
-		insert into Filmes(titulo, genero, id_diretor)
-						values(f_titulo, f_genero, f_diretor);
+		insert into Filmes(titulo, genero, id_diretor, capa)
+						values(f_titulo, f_genero, f_diretor, f_capa);
 	end if;
 end $$
 
 Delimiter $$
-create procedure editar_filme(f_titulo varchar (100), f_genero int, f_diretor int, f_cod int)
+create procedure editar_filme(f_titulo varchar (100), f_genero int, f_diretor int, f_cod int, f_capa varchar(255))
 begin
 			
             Update Filmes
-            set titulo = f_titulo, genero = f_genero, id_diretor = f_diretor
+            set titulo = f_titulo, genero = f_genero, id_diretor = f_diretor, capa = f_capa
             where id_filme = f_cod;
 
 end $$
@@ -143,7 +144,7 @@ end $$
 Delimiter $$
 create procedure listar_Filme()
 begin
-	select f.id_filme, f.titulo, f.id_diretor, f.genero from Filmes f
+	select f.id_filme, f.titulo, f.id_diretor, f.genero, f.capa from Filmes f
     inner join Diretores d on f.id_diretor = d.id_diretor
     inner join Genero g on f.genero = g.id_gen;
 
@@ -154,7 +155,7 @@ Delimiter $$
 drop procedure if exists obter_filme $$
 create procedure obter_filme(f_id int)
 begin
-	Select id_filme, titulo, genero , id_diretor from Filmes
+	Select id_filme, titulo, genero , id_diretor, capa from Filmes
     where id_filme = f_id;
 
 end $$
@@ -192,7 +193,7 @@ Drop procedure if exists buscar_premiacao $$
 create procedure buscar_premiacao(In p_q varchar(200), in c_t varchar(200))
 begin
 	Select 
-	 f.id_filme, f.titulo, f.genero
+	 f.id_filme, f.titulo, f.genero, f.capa
     from Filmes f 
     inner join Premiacoes p on f.id_filme = p.id_filme
     inner join Filmes_Genero g on f.genero = g.id_Gen

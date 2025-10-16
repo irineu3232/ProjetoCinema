@@ -37,8 +37,8 @@ namespace Cinema.Controllers
             {
                 listaDiretor.Add(new Diretor
                 {
-                    id_diretor = rd.GetInt32("id_diretor"),
-                    nome = rd.GetString("nomeDiretor")
+                    id_diretor = rd2.GetInt32("id_diretor"),
+                    nome = rd2.GetString("nomeDiretor")
                 });
 
             }
@@ -49,8 +49,8 @@ namespace Cinema.Controllers
             {
                 listaGenero.Add(new Genero
                 {
-                    id_gen = rd.GetInt32("id_gen"),
-                    nomeGen = rd.GetString("nomeGen")
+                    id_gen = rd3.GetInt32("id_gen"),
+                    nomeGen = rd3.GetString("nomeGen")
                 });
             }
 
@@ -77,13 +77,31 @@ namespace Cinema.Controllers
 
 
         [HttpPost]
-        public IActionResult Criar(Filme filme)
+        public IActionResult Criar(Filme filme, IFormFile? capa)
         {
+            string? relPath = null;
+
+            if(capa != null && capa.Length > 0)
+            {
+                var ext = Path.GetExtension(capa.FileName);
+                //Validação opicional ;)
+
+                var fileName = $"{Guid.NewGuid()}{ext}";
+                var savedir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "capas");
+                Directory.CreateDirectory(savedir);
+                var absPath = Path.Combine(savedir, fileName);
+                using var fs = new FileStream(absPath, FileMode.Create);
+                capa.CopyTo(fs);
+                relPath = Path.Combine("capas", fileName).Replace("\\", "/");
+
+            }
+
             using var conn = db.GetConnection();
             using var cmd = new MySqlCommand("cad_filme", conn) { CommandType = CommandType.StoredProcedure };
             cmd.Parameters.AddWithValue("f_titulo", filme.titulos);
             cmd.Parameters.AddWithValue("f_genero", filme.genero);
             cmd.Parameters.AddWithValue("f_diretor", filme.id_diretor);
+            cmd.Parameters.AddWithValue("f_capa", relPath);
             cmd.ExecuteNonQuery();
 
             return View();

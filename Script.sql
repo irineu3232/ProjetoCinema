@@ -192,7 +192,7 @@ Drop procedure if exists buscar_premiacao $$
 create procedure buscar_premiacao(In p_q varchar(200), in c_t varchar(200))
 begin
 	Select 
-	 f.id_filme, f.titulo
+	 f.id_filme, f.titulo, f.genero
     from Filmes f 
     inner join Premiacoes p on f.id_filme = p.id_filme
     inner join Filmes_Genero g on f.genero = g.id_Gen

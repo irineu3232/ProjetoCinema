@@ -30,7 +30,9 @@ namespace Cinema.Controllers
                     lista.Add(new Filme
                     {
                         id_filme = rd.GetInt32("id_filme"),
-                        titulos = rd.GetString("titulo")
+                        titulos = rd.GetString("titulo"),
+                        genero = rd.GetInt32("genero"),
+                        capa = rd.GetString("capa")
                     });
                 }
 
@@ -50,6 +52,7 @@ namespace Cinema.Controllers
             }
 
             ViewBag.q = q ?? "";
+            ViewBag.g = g ?? "";
             ViewBag.Titulos = titulos;
             ViewBag.Genero = CarregarGenero(conn);
 
@@ -62,7 +65,7 @@ namespace Cinema.Controllers
         public IActionResult Detalhes(int id)
         {
             Filme filmes = null;
-            List<(string Genero, string Diretor, string Premiacao)> premiacao = new();
+            List<(string Genero, string Diretor, string Premiacao, string codpremiacao)> premiacao = new();
             using (var conn = db.GetConnection())
             {
                 string query = @"
@@ -90,7 +93,7 @@ namespace Cinema.Controllers
 
                 // Buscar participações
                 string participacaoQuery = @"
-                        select  p.nomePremio, g.nomeGen, d.nome
+                        select  p.nomePremio, g.nomeGen, d.nome, p.id_premiacao
                         from Premiacoes p 
                         inner join Filmes f on p.id_filme = f.id_filme
                         inner join Filmes_Genero g on f.genero = g.id_Gen
@@ -115,10 +118,14 @@ namespace Cinema.Controllers
 
                             reader.IsDBNull(reader.GetOrdinal("nome"))
                                 ? null
-                                : reader.GetString(reader.GetOrdinal("nome"))
+                                : reader.GetString(reader.GetOrdinal("nome")),
+
+                            reader.IsDBNull(reader.GetOrdinal("id_premiacao"))
+                                ? "?"
+                                : reader.GetInt32(reader.GetOrdinal("id_premiacao")).ToString())
 
 
-                        ));
+                        );
                     }
 
                 }
@@ -167,7 +174,6 @@ namespace Cinema.Controllers
 
 
             ViewBag.Filme = CarregarFilme(conn);
-            ViewBag.Diretor = CarregarDiretor(conn);
 
             return View( premiacao);
         }

@@ -9,5 +9,7 @@
         public int? genero { get; set; }
 
         public int? id_diretor { get; set; }
+
+        public string? capa { get; set; }
     }
 }

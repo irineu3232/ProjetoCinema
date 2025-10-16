@@ -1,5 +1,55 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Cinema.Models.Usuario
+
 @{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewData["Title"] = "Novo Usuario";
+
 }
+
+<h2 class=" text-center;">Novo Usuario</h2>
+
+<link href="~/css/acoes.css" rel="stylesheet" />
+
+<form asp-action="Criar" method="post"  class="f">
+
+    @Html.AntiForgeryToken()
+
+
+
+    <div class="d">
+        <label class="l">Nome:</label>
+        <input asp-for="Nome" required class="i" />
+    </div>
+
+    <div class="d">
+        <label class="l"> Email</label>
+        <input type="email" required class="i"/>
+    </div>
+
+    <div class="d">
+        <label class="l">Senha:</label>
+        <input type="password" required  class="i"/>
+    </div>
+
+    <div class="d">
+
+        <label class="l">Função:</label>
+
+        <select asp-for="role"  class="s">
+
+            <option value="admin">Admin</option>
+            <option value="gerente">Gerente</option>
+            <option value="cliente">Cliente</option>
+
+        </select>
+
+    </div>
+
+
+
+    <button type="submit">Cadastrar</button>
+    <button asp-action="Index">Voltar</button>
+
+</form> 

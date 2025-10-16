@@ -1,5 +1,53 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Cinema.Models.Filme
 @{
+    var info = ViewBag.Participacoes as List<(string Genero, string Diretor, string Premiacao, string codpremiacao)>;
+    var role = Context.Session.GetString(Cinema.Autenticao.SessionKey.UserRole);
 }
+
+<h2>Detalhes de premiações do Filme</h2>
+
+<h2>@Model.titulos</h2>
+
+
+@if (info != null && info.Any())
+{
+    <table>
+        <tr>
+            <th>Genero</th>
+            <th>Diretor</th>
+            <th>Premiação</th>
+        </tr>
+
+        @foreach (var i in info)
+        {
+            <tr>
+                <td>@i.Genero</td>
+                <td>@i.Diretor</td>
+                <td>@i.Premiacao</td>
+                @if (role == "admin" || role == "gerente")
+                {
+                    <td>
+                        <div>
+                            <form asp-action="Editar">
+                                <input type="hidden" name="id" value="@i.codpremiacao" />
+                                <button type="submit">Editar Premiacação</button>
+                           </form>
+
+                            <form asp-action="Excluir">
+                            <input type="hidden" name="id" value="@i.codpremiacao" />
+                                <button type="submit">Excluir Premiação</button>
+                            </form>
+
+                        </div>
+                    </td>
+                }
+            </tr>
+        }
+    </table>       
+}
+else
+{
+    <p>O filme em questão, não possui nenhuma premiação</p>
+}
+
+<p><a asp-action="Index">Voltar</a></p>

@@ -1,5 +1,45 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Cinema.Models.Premiacoes
+
 @{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewData["Title"] = "Registrar premiação";
+
 }
+
+<h2 class=" text-center;">Novo Premiação</h2>
+
+<link href="~/css/acoes.css" rel="stylesheet" />
+
+<form asp-action="Criar" method="post"  class="f">
+
+    @Html.AntiForgeryToken()
+
+
+
+    <div class="d">
+        <label class="l">Insira a premiação</label>
+        <input asp-for="premio" required class="i" />
+    </div>
+
+
+
+    <div class="d">
+
+        <label class="l">Selecione o filme</label>
+
+        <select asp-for="filme" asp-items=" ViewBag.Filme" class="s">
+
+            <option value="">(Selecione)</option>
+
+        </select>
+
+    </div>
+
+
+
+    <button type="submit">Salvar</button>
+    <button asp-action="Index">Voltar</button>
+
+</form> 

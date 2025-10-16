@@ -71,6 +71,7 @@ namespace Cinema.Controllers
         {
             using var conn = db.GetConnection();
             ViewBag.Genero = CarregarGenero(conn);
+            ViewBag.Diretor = CarregarDiretor(conn);
             return View();
         }
 
@@ -135,6 +136,17 @@ namespace Cinema.Controllers
             using var rd = cmd.ExecuteReader();
             while (rd.Read())
                 list.Add(new SelectListItem { Value = rd.GetInt32("id_gen").ToString(), Text = rd.GetString("nomeGen") });
+            return list;
+        }
+
+
+        private List<SelectListItem> CarregarDiretor(MySqlConnection conn)
+        {
+            var list = new List<SelectListItem>();
+            using var cmd = new MySqlCommand("select id_diretor, nome from Diretores", conn);
+            using var rd = cmd.ExecuteReader();
+            while (rd.Read())
+                list.Add(new SelectListItem { Value = rd.GetInt32("id_diretor").ToString(), Text = rd.GetString("nomeGen") });
             return list;
         }
 

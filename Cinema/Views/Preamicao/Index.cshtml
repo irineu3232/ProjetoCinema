@@ -1,5 +1,53 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<Cinema.Models.Filme>
+
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Filmes premiados";
 }
+
+<button asp-action="Criar">Cadastrar Premiação</button>
+
+<h2>Lista de Filmes Premiados</h2>
+
+<form method="get" asp.action="Index">
+    <input list="filmes" name="q" value="ViewBag.q" placeholder="Buscar por titulo" />
+    <datalist>
+        @if (ViewBag.Titulos is IEnumerable<string> ts)
+        {
+            foreach(var t in ts)
+            {
+                <option value="t"></option>
+            }
+        }
+    </datalist>
+
+   <select value="ViewBag.g" asp-items="ViewBag.Genero">
+       <option value="">(selecione o genero do filme)</option>
+   </select>
+
+    <button type="submit">Buscar</button>
+</form>
+
+<div>
+    @foreach (var l in Model)
+    {
+        <div>
+            <div>
+                @if (!string.IsNullOrWhiteSpace(l.capa))
+                {
+                    <img src="~/@l.capa" alt="@l.titulos" />
+                }
+                else
+                {
+                    <span style="color:#aaa">Sem capa</span>
+                }
+            </div>
+            <div>
+                <a href="../Detalhes/@l.id_filme">@l.titulos</a>
+                <input type="hidden" value="@l.id_filme" />
+            </div>
+
+        </div>
+    }
+
+</div>

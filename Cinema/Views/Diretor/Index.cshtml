@@ -3,7 +3,7 @@
 
 <a asp-action="Criar"> Cadastrar Diretor</a>
 
-@if (Model != null || Model.Any())
+@if (Model.Any())
 {
     <table class="">
 
@@ -30,7 +30,7 @@
 
                 <tr>
 
-                    <td>@l.nome /></td>
+                    <td>@l.nome </td>
 
                     <td>@l.pais_origem</td>
 

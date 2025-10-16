@@ -82,7 +82,7 @@ namespace Cinema.Controllers
             cmd.Parameters.AddWithValue("d_pais", diretor.pais_origem);
             cmd.ExecuteNonQuery();
             
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
@@ -94,7 +94,7 @@ namespace Cinema.Controllers
             cmd.Parameters.AddWithValue("d_id", id);
             cmd.ExecuteNonQuery();
 
-            return View();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

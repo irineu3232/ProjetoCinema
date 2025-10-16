@@ -69,7 +69,7 @@ namespace Cinema.Controllers
             using (var conn = db.GetConnection())
             {
                 string query = @"
-                 select f.id_filme, f.titulo, f.genero 
+                 select f.id_filme, f.titulo, f.genero, f.id_diretor, f.capa 
                  from Filmes f
                  where id_filme = @id; 
                  ";
@@ -86,7 +86,8 @@ namespace Cinema.Controllers
                            id_filme = reader.GetInt32("id_filme"),
                            id_diretor = reader.GetInt32("id_diretor"),
                            titulos = reader.GetString("titulo"),
-                           genero = reader.GetInt32("genero")
+                           genero = reader.GetInt32("genero"),
+                           capa = reader.GetString("capa")
                         };
                     }
                 }
@@ -138,16 +139,18 @@ namespace Cinema.Controllers
         [HttpGet]
         public IActionResult Criar()
         {
+            using var conn = db.GetConnection();
+            ViewBag.Filme = CarregarFilme(conn);
             return View();
         }
 
         [HttpPost]
-        public IActionResult Criar( Premiacoes premio)
+        public IActionResult Criar( Premiacoes premiacao)
         {
             using var conn = db.GetConnection();
             using var cmd = new MySqlCommand("cad_premiacao", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("p_nomePremio", premio.premio);
-            cmd.Parameters.AddWithValue("p_filme", premio.filme);
+            cmd.Parameters.AddWithValue("p_nomePremio", premiacao.premio);
+            cmd.Parameters.AddWithValue("p_filme", premiacao.filme);
             cmd.ExecuteNonQuery();
 
             return View();

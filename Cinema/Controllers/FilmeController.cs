@@ -24,26 +24,27 @@ namespace Cinema.Controllers
             {
                 lista.Add(new Filme
                 {
-                    id_diretor = rd.GetInt32("f.id_diretor"),
-                    titulos = rd.GetString("f.titulo"),
-                    id_filme = rd.GetInt32("f.id_filme"),
-                    genero = rd.GetInt32("f.genero")
+                    id_diretor = rd.GetInt32("id_diretor"),
+                    titulos = rd.GetString("titulo"),
+                    id_filme = rd.GetInt32("id_filme"),
+                    genero = rd.GetInt32("genero"),
+                    capa = rd.GetString("capa")
                 });
             }
-
-            using var cmd2 = new MySqlCommand("select id_diretor, nome from Diretores", conn);
+            using var conn2 = db.GetConnection();
+            using var cmd2 = new MySqlCommand("select id_diretor, nome from Diretores", conn2);
             var rd2 = cmd2.ExecuteReader();
             while(rd2.Read())
             {
                 listaDiretor.Add(new Diretor
                 {
                     id_diretor = rd2.GetInt32("id_diretor"),
-                    nome = rd2.GetString("nomeDiretor")
+                    nome = rd2.GetString("nome")
                 });
 
             }
-
-            using var cmd3 = new MySqlCommand("Select id_gen, nomeGen from Filmes_Genero", conn);
+            using var conn3 = db.GetConnection();
+            using var cmd3 = new MySqlCommand("Select id_gen, nomeGen from Filmes_Genero", conn3);
             var rd3 = cmd3.ExecuteReader();
             while(rd3.Read())
             {
@@ -84,7 +85,7 @@ namespace Cinema.Controllers
             if(capa != null && capa.Length > 0)
             {
                 var ext = Path.GetExtension(capa.FileName);
-                //Validação opicional ;)
+      
 
                 var fileName = $"{Guid.NewGuid()}{ext}";
                 var savedir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "capas");
@@ -101,7 +102,7 @@ namespace Cinema.Controllers
             cmd.Parameters.AddWithValue("f_titulo", filme.titulos);
             cmd.Parameters.AddWithValue("f_genero", filme.genero);
             cmd.Parameters.AddWithValue("f_diretor", filme.id_diretor);
-            cmd.Parameters.AddWithValue("f_capa", relPath);
+            cmd.Parameters.AddWithValue("f_capa",(object?) relPath ?? DBNull.Value);
             cmd.ExecuteNonQuery();
 
             return View();
@@ -109,41 +110,61 @@ namespace Cinema.Controllers
 
 
         [HttpGet]
-        public IActionResult Editar(int id)
+        public IActionResult Editar(int id_filme)
         {
-            using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("obter_filme", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("f_id", id);
+            using var conn2 = db.GetConnection();
+            using var cmd = new MySqlCommand("obter_filme", conn2) { CommandType = CommandType.StoredProcedure };
+            cmd.Parameters.AddWithValue("f_id", id_filme);
             cmd.ExecuteReader();
 
+            using var conn = db.GetConnection();
+            ViewBag.Diretor = CarregarDiretor(conn);
             ViewBag.Genero = CarregarGenero(conn);
             return View();
         }
 
 
         [HttpPost,ValidateAntiForgeryToken]
-        public IActionResult Editar(int id, Filme filme)
+        public IActionResult Editar(int id_filme, Filme filme, IFormFile? capa)
         {
+
+            string? relPath = null;
+
+            if (capa != null && capa.Length > 0)
+            {
+                var ext = Path.GetExtension(capa.FileName);
+                //Validação opicional ;)
+
+                var fileName = $"{Guid.NewGuid()}{ext}";
+                var savedir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "capas");
+                Directory.CreateDirectory(savedir);
+                var absPath = Path.Combine(savedir, fileName);
+                using var fs = new FileStream(absPath, FileMode.Create);
+                capa.CopyTo(fs);
+                relPath = Path.Combine("capas", fileName).Replace("\\", "/");
+
+            }
 
             using var conn = db.GetConnection();
             using var cmd = new MySqlCommand("editar_filme", conn) { CommandType = CommandType.StoredProcedure };
             cmd.Parameters.AddWithValue("f_titulo", filme.titulos);
             cmd.Parameters.AddWithValue("f_genero", filme.genero);
             cmd.Parameters.AddWithValue("f_diretor", filme.id_diretor);
-            cmd.Parameters.AddWithValue("f_cod", filme.id_filme);
+            cmd.Parameters.AddWithValue("f_cod", id_filme);
+            cmd.Parameters.AddWithValue("f_capa", (object?)relPath ?? DBNull.Value);
             cmd.ExecuteNonQuery();
 
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Excluir(int id)
+        public IActionResult Excluir(int id_filme)
         {
             using var conn = db.GetConnection();
             using var cmd = new MySqlCommand("deletar_filme", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("f_id", id);
+            cmd.Parameters.AddWithValue("f_id", id_filme);
             cmd.ExecuteNonQuery();
 
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
 
@@ -164,7 +185,7 @@ namespace Cinema.Controllers
             using var cmd = new MySqlCommand("select id_diretor, nome from Diretores", conn);
             using var rd = cmd.ExecuteReader();
             while (rd.Read())
-                list.Add(new SelectListItem { Value = rd.GetInt32("id_diretor").ToString(), Text = rd.GetString("nomeGen") });
+                list.Add(new SelectListItem { Value = rd.GetInt32("id_diretor").ToString(), Text = rd.GetString("nome") });
             return list;
         }
 

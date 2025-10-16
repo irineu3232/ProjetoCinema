@@ -45,12 +45,12 @@ namespace Cinema.Controllers
         }
 
         [HttpGet]
-        public IActionResult Editar(int id)
+        public IActionResult Editar(int id_gen)
         {
             Genero? genero = null;
             using var conn = db.GetConnection();
             using var cmd = new MySqlCommand("buscar_genero", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("g_id", id);
+            cmd.Parameters.AddWithValue("g_id", id_gen);
             var rd = cmd.ExecuteReader();
             while(rd.Read())
             {
@@ -67,15 +67,15 @@ namespace Cinema.Controllers
 
 
         [HttpPost, ValidateAntiForgeryToken]
-        public IActionResult Editar(int id, Genero genero)
+        public IActionResult Editar(int id_gen, Genero genero)
         {
             using var conn = db.GetConnection();
             using var cmd = new MySqlCommand("editar_genero", conn) { CommandType = CommandType.StoredProcedure };
             cmd.Parameters.AddWithValue("g_nome", genero.nomeGen);
-            cmd.Parameters.AddWithValue("g_id", id);
+            cmd.Parameters.AddWithValue("g_id", id_gen);
             cmd.ExecuteNonQuery();
 
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
@@ -86,7 +86,7 @@ namespace Cinema.Controllers
             cmd.Parameters.AddWithValue("g_id", id);
             cmd.ExecuteNonQuery();
 
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
 

@@ -75,7 +75,7 @@ namespace Cinema.Controllers
                     Email = rd.GetString("Email"),
                     Senha = rd.GetString("Senha"),
                     role = rd.GetString("role"),
-                    Ativo = rd.GetString("Ativo")
+                    
                 };
              
             }
@@ -96,6 +96,7 @@ namespace Cinema.Controllers
             cmd.Parameters.AddWithValue("u_email", usuario.Email);
             cmd.Parameters.AddWithValue("u_senha", senha);
             cmd.Parameters.AddWithValue("u_role", usuario.role);
+            cmd.Parameters.AddWithValue("id_user", id);
             cmd.ExecuteNonQuery();
 
             return RedirectToAction("Index");
@@ -107,7 +108,8 @@ namespace Cinema.Controllers
             using var conn = db.GetConnection();
             using var cmd = new MySqlCommand("deletar_usuario", conn) { CommandType = CommandType.StoredProcedure };
             cmd.Parameters.AddWithValue("u_id", id);
-            return View(); 
+            cmd.ExecuteNonQuery();
+            return RedirectToAction(nameof(Index));
         }
 
 

@@ -115,7 +115,7 @@ Delimiter $$
 create procedure cad_Filme(f_titulo varchar (100), f_genero int, f_diretor int, f_capa varchar(255))
 begin
 
-	if not exists (select id_filme from Filme where titulo = f_titulo)
+	if not exists (select id_filme from Filmes where titulo = f_titulo)
 					then
 		insert into Filmes(titulo, genero, id_diretor, capa)
 						values(f_titulo, f_genero, f_diretor, f_capa);
@@ -146,7 +146,7 @@ create procedure listar_Filme()
 begin
 	select f.id_filme, f.titulo, f.id_diretor, f.genero, f.capa from Filmes f
     inner join Diretores d on f.id_diretor = d.id_diretor
-    inner join Genero g on f.genero = g.id_gen;
+    inner join Filmes_Genero g on f.genero = g.id_gen;
 
 end $$
 
@@ -198,7 +198,7 @@ begin
     inner join Premiacoes p on f.id_filme = p.id_filme
     inner join Filmes_Genero g on f.genero = g.id_Gen
     where 
-		(p_q is null or p_q = '' or l.titulo like concat('%', p_q, '%'))
+		(p_q is null or p_q = '' or f.titulo like concat('%', p_q, '%'))
         or
         (c_t is null or c_t = '' or g.nomeGen like concat('%',c_t,'%'))
 	Order by f.titulo;
@@ -264,7 +264,7 @@ Delimiter $$
 create procedure cad_genero(g_nome varchar(100))
 begin
 
-	if not exists (select id_Gen from Filmes_Genero where nome = g_nome )
+	if not exists (select id_Gen from Filmes_Genero where nomeGen = g_nome )
 					then
 		insert into Filmes_Genero(nomeGen)
 						values(g_nome);

@@ -7,7 +7,7 @@
     }
 
 <a asp-action="Criar"> Cadastrar Filme</a>
-@if (Model != null || Model.Any())
+@if (Model.Any())
 {
 
     <table class="">
@@ -38,7 +38,7 @@
                 var genero = generos.FirstOrDefault(g => g.id_gen == l.genero);
                 <tr>
 
-                    <td><img  src="@l.capa"/></td>
+                    <td><img  src="~/@l.capa" alt="@l.titulos"/></td>
                     <td>@l.titulos</td>
                     <td>@(genero != null ? genero.nomeGen : "Desconhecido")</td>
 
@@ -50,7 +50,7 @@
 
                             <form asp-action="Editar" method="get">
 
-                                <input type="hidden" name="id" value="@l.id_diretor" />
+                                <input type="hidden" name="id_filme" value="@l.id_filme" />
 
                                 <button type="submit" class="btn btn-editar">Editar</button>
 
@@ -60,7 +60,7 @@
 
                                 @Html.AntiForgeryToken()
 
-                                <input type="hidden" name="id" value="@l.id_diretor" />
+                                <input type="hidden" name="id_filme" value="@l.id_filme" />
 
                                 <button type="submit" class="btn btn-excluir">Excluir</button>
 

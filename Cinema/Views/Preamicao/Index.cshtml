@@ -5,7 +5,7 @@
     ViewData["Title"] = "Filmes premiados";
 }
 
-<button asp-action="Criar">Cadastrar Premiação</button>
+<a asp-action="Criar">Cadastrar Premiação</a>
 
 <h2>Lista de Filmes Premiados</h2>
 
@@ -27,7 +27,8 @@
 
     <button type="submit">Buscar</button>
 </form>
-@if (Model != null || Model.Any())
+
+@if (Model.Any())
 {
     <div>
         @foreach (var l in Model)
@@ -44,7 +45,8 @@
                     }
                 </div>
                 <div>
-                    <a href="../Detalhes/@l.id_filme">@l.titulos</a>
+
+                    <a asp-action="Detalhes" asp-route-id="@l.id_filme">@l.titulos</a>
                     <input type="hidden" value="@l.id_filme" />
                 </div>
 

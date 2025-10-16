@@ -3,7 +3,7 @@
 
 <a asp-action="Criar"> Cadastrar Genero</a>
 
-@if(Model != null || Model.Any())
+@if(Model.Any())
 {
 
     <table class="">
@@ -30,7 +30,7 @@
 
                 <tr>
 
-                    <td>@l.nomeGen /></td>
+                    <td>@l.nomeGen</td>
 
                     
                     <td>
@@ -39,7 +39,7 @@
 
                             <form asp-action="Editar" method="get">
 
-                                <input type="hidden" name="id" value="@l.id" />
+                                <input type="hidden" name="id_gen" value="@l.id_gen" />
 
                                 <button type="submit" class="btn btn-editar">Editar</button>
 
@@ -49,7 +49,7 @@
 
                                 @Html.AntiForgeryToken()
 
-                                <input type="hidden" name="id" value="@l.id" />
+                                <input type="hidden" name="id" value="@l.id_gen" />
 
                                 <button type="submit" class="btn btn-excluir">Excluir</button>
 

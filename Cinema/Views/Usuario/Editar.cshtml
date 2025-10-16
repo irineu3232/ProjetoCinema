@@ -27,12 +27,12 @@
 
     <div class="d">
         <label class="l"> Email</label>
-        <input type="email" required class="i" />
+        <input type="email"asp-for="Email" required class="i" />
     </div>
 
     <div class="d">
         <label class="l">Senha:</label>
-        <input type="password" required class="i" />
+        <input type="password" asp-for="Senha" required class="i" />
     </div>
 
     <div class="d">
@@ -40,7 +40,7 @@
         <label class="l">Função:</label>
 
         <select asp-for="role" class="s">
-
+            <option value=""> Selecione um cargo</option>
             <option value="admin">Admin</option>
             <option value="gerente">Gerente</option>
             <option value="cliente">Cliente</option>
@@ -52,6 +52,7 @@
 
 
     <button type="submit">Editar</button>
-    <button asp-action="Index">Voltar</button>
+    <a asp-action="Index">Voltar</a>
 
-</form> 
+
+</form>

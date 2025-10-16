@@ -2,70 +2,77 @@
 
 
     <a asp-action="Criar"> Cadastrar Usuário</a>
+@if (Model.Any())
+{
 
-<table class="">
+    <table class="">
 
-    <thead>
-
-        <tr>
-
-            <th>Nome</th>
-
-            <th>Email</th>
-
-            <th>Cargo</th>
-
-            
-            <th class="col-acoes">Ações</th>
-
-        </tr>
-
-    </thead>
-
-    <tbody>
-
-        @foreach (var l in Model)
-
-        {
+        <thead>
 
             <tr>
 
-                <td>@l.Nome /></td>
+                <th>Nome</th>
 
-                <td>@l.Email</td>
+                <th>Email</th>
 
-                <td>@l.role</td>
+                <th>Cargo</th>
 
-                <td>
 
-                    <div class="acoes">
-
-                        <form asp-action="Editar" method="get">
-
-                            <input type="hidden" name="id" value="@l.id" />
-
-                            <button type="submit" class="btn btn-editar">Editar</button>
-
-                        </form>
-
-                        <form asp-action="Excluir" method="post" onsubmit="return confirm('Excluir este livro?');">
-
-                            @Html.AntiForgeryToken()
-
-                            <input type="hidden" name="id" value="@l.id" />
-
-                            <button type="submit" class="btn btn-excluir">Excluir</button>
-
-                        </form>
-
-                    </div>
-
-                </td>
+                <th class="col-acoes">Ações</th>
 
             </tr>
 
-        }
+        </thead>
 
-    </tbody>
+        <tbody>
 
-</table> 
+            @foreach (var l in Model)
+
+            {
+
+                <tr>
+
+                    <td>@l.Nome </td>
+
+                    <td>@l.Email</td>
+
+                    <td>@l.role</td>
+
+                    <td>
+
+                        <div class="acoes">
+
+                            <form asp-action="Editar" method="get">
+
+                                <input type="hidden" name="id" value="@l.id" />
+
+                                <button type="submit" class="btn btn-editar">Editar</button>
+
+                            </form>
+
+                            <form asp-action="Excluir" method="post" onsubmit="return confirm('Excluir este livro?');">
+
+                                @Html.AntiForgeryToken()
+
+                                <input type="hidden" name="id" value="@l.id" />
+
+                                <button type="submit" class="btn btn-excluir">Excluir</button>
+
+                            </form>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            }
+
+        </tbody>
+
+    </table>
+}
+else
+{
+    <p> Nenhum usuário cadastrado</p>
+}

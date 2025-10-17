@@ -1,53 +1,68 @@
 ﻿@model Cinema.Models.Filme
+@using Cinema.Autenticao;
+
 @{
     var info = ViewBag.Participacoes as List<(string Genero, string Diretor, string Premiacao, string codpremiacao)>;
-    var role = Context.Session.GetString(Cinema.Autenticao.SessionKey.UserRole);
+    var role = Context.Session.GetString(SessionKey.UserRole);
 }
 
 <h2>Detalhes de premiações do Filme</h2>
-
-<h2>@Model.titulos</h2>
-
+<h2> @Model.titulos</h2>
+<img src="~/@Model.capa" alt="teste" />
 
 @if (info != null && info.Any())
 {
-    <table>
-        <tr>
-            <th>Genero</th>
-            <th>Diretor</th>
-            <th>Premiação</th>
-        </tr>
+    // Como todas as premiações são do mesmo filme, pegamos o diretor e gênero da primeira ocorrência
+    // Vai pegar o primeiro item da lista relacionada a Genero e a Diretor
+    var genero = info.First().Genero;
+    var diretor = info.First().Diretor;
 
-        @foreach (var i in info)
-        {
+    <p><strong>Gênero:</strong> @genero</p>
+    <p><strong>Diretor:</strong> @diretor</p>
+
+    <table>
+        <thead>
             <tr>
-                <td>@i.Genero</td>
-                <td>@i.Diretor</td>
-                <td>@i.Premiacao</td>
+                <th>Premiação</th>
                 @if (role == "admin" || role == "gerente")
                 {
-                    <td>
-                        <div>
-                            <form asp-action="Editar">
-                                <input type="hidden" name="id" value="@i.codpremiacao" />
-                                <button type="submit">Editar Premiacação</button>
-                           </form>
-
-                            <form asp-action="Excluir">
-                            <input type="hidden" name="id" value="@i.codpremiacao" />
-                                <button type="submit">Excluir Premiação</button>
-                            </form>
-
-                        </div>
-                    </td>
+                    <th>Ações</th>
                 }
+               
+                
             </tr>
-        }
-    </table>       
+        </thead>
+        <tbody>
+            @foreach (var i in info)
+            {
+                <tr>
+                    <td>@i.Premiacao</td>
+                    
+                    @if (role == "admin" || role == "gerente")
+                    {
+                        <td>
+                            <div>
+                                <form asp-action="Editar" method="get">
+                                    <input type="hidden" name="id_premiacao" value="@i.codpremiacao" />
+                                    <button type="submit">Editar Premiação</button>
+                                </form>
+
+                                <form asp-action="Excluir" method="post" onsubmit="return confirm('Deseja realmente excluir?');">
+                                    <input type="hidden" name="id" value="@i.codpremiacao" />
+                                    <button type="submit">Excluir Premiação</button>
+                                </form>
+                            </div>
+                        </td>
+
+                    }                    
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 else
 {
-    <p>O filme em questão, não possui nenhuma premiação</p>
+    <p>O filme em questão, não possui nenhuma premiação.</p>
 }
 
 <p><a asp-action="Index">Voltar</a></p>

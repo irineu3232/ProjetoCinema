@@ -1,16 +1,21 @@
 ﻿@model IEnumerable<Cinema.Models.Filme>
+@using Cinema.Autenticao;
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Filmes premiados";
+    var role = Context.Session.GetString(SessionKey.UserRole);
 }
 
-<a asp-action="Criar">Cadastrar Premiação</a>
+@if (role == "admin" || role == "gerente")
+{
+    <a asp-action="Criar">Cadastrar Premiação</a>
+}
 
 <h2>Lista de Filmes Premiados</h2>
 
 <form method="get" asp.action="Index">
-    <input list="filmes" name="q" value="ViewBag.q" placeholder="Buscar por titulo" />
+    <input list="filmes" name="q" value="@ViewBag.q" placeholder="Buscar por titulo" />
     <datalist>
         @if (ViewBag.Titulos is IEnumerable<string> ts)
         {
@@ -21,9 +26,9 @@
         }
     </datalist>
 
-   <select value="ViewBag.g" asp-items="ViewBag.Genero">
-       <option value="">(selecione o genero do filme)</option>
-   </select>
+    <select name="g" asp-items="ViewBag.Genero">
+        <option value="">(selecione o gênero do filme)</option>
+    </select>
 
     <button type="submit">Buscar</button>
 </form>

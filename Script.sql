@@ -79,10 +79,11 @@ begin
 end $$
 
 Delimiter $$
+Drop procedure if exists buscar_usuario_login $$
 create procedure buscar_usuario_login (u_email varchar(150))
 begin
 
-	select Id, Nome , Email, Senha, role, Ativo from Usuarios
+	select Id, Nome , Email, Senha, role, Ativo from Usuario
     where Email = u_email;
 
 end $$
@@ -189,22 +190,29 @@ end $$
 
 
 Delimiter $$
-Drop procedure if exists buscar_premiacao $$
-create procedure buscar_premiacao(In p_q varchar(200), in c_t varchar(200))
-begin
-	Select 
-	 f.id_filme, f.titulo, f.genero, f.capa
-    from Filmes f 
-    inner join Premiacoes p on f.id_filme = p.id_filme
-    inner join Filmes_Genero g on f.genero = g.id_Gen
-    where 
-		(p_q is null or p_q = '' or f.titulo like concat('%', p_q, '%'))
-        or
-        (c_t is null or c_t = '' or g.nomeGen like concat('%',c_t,'%'))
-	Order by f.titulo;
-end $$
+DROP PROCEDURE IF EXISTS buscar_premiacao;
+CREATE PROCEDURE buscar_premiacao(IN p_q VARCHAR(100), IN c_t VARCHAR(10))
+BEGIN
+    SELECT DISTINCT
+        f.id_filme,
+        f.titulo,
+        f.genero,
+        f.capa
+    FROM Filmes f
+    INNER JOIN Premiacoes p ON f.id_filme = p.id_filme
+    INNER JOIN Filmes_Genero g ON f.genero = g.id_Gen
+    WHERE 
+        (
+            (p_q IS NOT NULL AND p_q <> '' AND f.titulo LIKE CONCAT('%', p_q, '%'))
+            OR
+            (c_t IS NOT NULL AND c_t <> '' AND g.id_Gen = CAST(c_t AS UNSIGNED))
+            OR
+            ((p_q IS NULL OR p_q = '') AND (c_t IS NULL OR c_t = ''))
+        )
+    ORDER BY f.titulo;
+END$$
 
-
+DELIMITER ;
 
 
 -- Diretores --

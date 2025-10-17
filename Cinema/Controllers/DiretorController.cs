@@ -3,9 +3,11 @@ using Cinema.Models;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using System.Data;
+using Cinema.Autenticao;
 
 namespace Cinema.Controllers
 {
+    [SessionAuthorize(RoleAnyOf = "admin,gerente")]
     public class DiretorController : Controller
     {
 

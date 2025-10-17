@@ -7,24 +7,56 @@
       "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\preamicaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\preamicao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\preamicao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\controllers\\generocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\generocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\preamicao\\criar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\preamicao\\criar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\filme\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\filme\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\controllers\\diretorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\diretorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\preamicao\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\preamicao\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\preamicao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\preamicao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\preamicao\\criar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\preamicao\\criar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\auth\\acessonegado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\auth\\acessonegado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\preamicao\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\preamicao\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|c:\\users\\gatin\\onedrive\\\u00E1rea de trabalho\\projetocinema\\cinema\\views\\filme\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{93E72354-067F-44E3-817C-F7B088B97775}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\filme\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,32 +66,110 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GeneroController.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\GeneroController.cs",
+              "RelativeDocumentMoniker": "Cinema\\Controllers\\GeneroController.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\GeneroController.cs",
+              "RelativeToolTip": "Cinema\\Controllers\\GeneroController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T00:05:37.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "Cinema\\Views\\Auth\\Login.cshtml",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "Cinema\\Views\\Auth\\Login.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwBUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T22:57:26.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Editar.cshtml",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Preamicao\\Editar.cshtml",
+              "RelativeDocumentMoniker": "Cinema\\Views\\Preamicao\\Editar.cshtml",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Preamicao\\Editar.cshtml",
+              "RelativeToolTip": "Cinema\\Views\\Preamicao\\Editar.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T21:58:05.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Detalhes.cshtml",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Preamicao\\Detalhes.cshtml",
+              "RelativeDocumentMoniker": "Cinema\\Views\\Preamicao\\Detalhes.cshtml",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Preamicao\\Detalhes.cshtml",
+              "RelativeToolTip": "Cinema\\Views\\Preamicao\\Detalhes.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T21:36:17.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Preamicao\\Index.cshtml",
               "RelativeDocumentMoniker": "Cinema\\Views\\Preamicao\\Index.cshtml",
               "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Preamicao\\Index.cshtml",
               "RelativeToolTip": "Cinema\\Views\\Preamicao\\Index.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADoAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-16T20:49:37.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Criar.cshtml",
               "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Preamicao\\Criar.cshtml",
               "RelativeDocumentMoniker": "Cinema\\Views\\Preamicao\\Criar.cshtml",
               "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Preamicao\\Criar.cshtml",
               "RelativeToolTip": "Cinema\\Views\\Preamicao\\Criar.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-16T20:49:53.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FilmeController.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\FilmeController.cs",
+              "RelativeDocumentMoniker": "Cinema\\Controllers\\FilmeController.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\FilmeController.cs*",
+              "RelativeToolTip": "Cinema\\Controllers\\FilmeController.cs*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T20:00:23.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DiretorController.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\DiretorController.cs",
+              "RelativeDocumentMoniker": "Cinema\\Controllers\\DiretorController.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\DiretorController.cs",
+              "RelativeToolTip": "Cinema\\Controllers\\DiretorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T19:57:49.185Z",
               "EditorCaption": ""
             },
             {
@@ -70,14 +180,66 @@
               "RelativeDocumentMoniker": "Cinema\\Controllers\\PreamicaoController.cs",
               "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\PreamicaoController.cs",
               "RelativeToolTip": "Cinema\\Controllers\\PreamicaoController.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAowFkAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAkwMIAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-16T20:45:08.924Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Cinema\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Cinema\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T22:56:33.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Cinema\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Cinema\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T23:14:54.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Cinema\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Cinema\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T23:25:39.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AcessoNegado.cshtml",
+              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Auth\\AcessoNegado.cshtml",
+              "RelativeDocumentMoniker": "Cinema\\Views\\Auth\\AcessoNegado.cshtml",
+              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Auth\\AcessoNegado.cshtml",
+              "RelativeToolTip": "Cinema\\Views\\Auth\\AcessoNegado.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T22:57:56.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Views\\Filme\\Index.cshtml",
               "RelativeDocumentMoniker": "Cinema\\Views\\Filme\\Index.cshtml",
@@ -85,34 +247,7 @@
               "RelativeToolTip": "Cinema\\Views\\Filme\\Index.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAACgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-16T20:23:04.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FilmeController.cs",
-              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\FilmeController.cs",
-              "RelativeDocumentMoniker": "Cinema\\Controllers\\FilmeController.cs",
-              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\FilmeController.cs",
-              "RelativeToolTip": "Cinema\\Controllers\\FilmeController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwB4AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T20:00:23.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DiretorController.cs",
-              "DocumentMoniker": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\DiretorController.cs",
-              "RelativeDocumentMoniker": "Cinema\\Controllers\\DiretorController.cs",
-              "ToolTip": "C:\\Users\\gatin\\OneDrive\\\u00C1rea de Trabalho\\ProjetoCinema\\Cinema\\Controllers\\DiretorController.cs",
-              "RelativeToolTip": "Cinema\\Controllers\\DiretorController.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAlwFQAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T19:57:49.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-16T20:23:04.355Z"
             }
           ]
         }

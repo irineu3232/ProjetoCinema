@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Login";
+}
+
+<section>
+    <h2> Área de login</h2>
+
+    @if (ViewBag.Error != null)
+
+    {
+
+        <div class="alert-error">@ViewBag.Error</div>
+
+    }
+
+
+    <form asp-action="Login" method="post">
+
+        @Html.AntiForgeryToken()
+
+        <div>
+            <label>E-mail:</label>
+            <input type="email" name="email" required />
+        </div>
+
+        <div>
+            <label>Senha</label>
+            <input type="password" name="senha" required/>
+        </div>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+
+</section>

@@ -1,4 +1,5 @@
-﻿using Cinema.Data;
+﻿using Cinema.Autenticao;
+using Cinema.Data;
 using Cinema.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -37,8 +38,8 @@ namespace Cinema.Controllers
                 }
 
             }
-
-            using (var cmdAll = new MySqlCommand("buscar_premiacao", conn) { CommandType = CommandType.StoredProcedure})
+            using var conn2 = db.GetConnection();
+            using (var cmdAll = new MySqlCommand("buscar_premiacao", conn2) { CommandType = CommandType.StoredProcedure})
             {
                 cmdAll.Parameters.AddWithValue("p_q", "");
                 cmdAll.Parameters.AddWithValue("c_t", "");
@@ -46,15 +47,17 @@ namespace Cinema.Controllers
                 while(rd2.Read())
                 {
                     var titulo = rd2.GetString("titulo");
-                    if (!string.IsNullOrWhiteSpace(titulo) && !titulos.Contains(titulo)) ;
+                    if (!string.IsNullOrWhiteSpace(titulo) && !titulos.Contains(titulo)) 
                     titulos.Add(titulo);
                 }
             }
 
+            using var conn3 = db.GetConnection();
+
             ViewBag.q = q ?? "";
             ViewBag.g = g ?? "";
             ViewBag.Titulos = titulos;
-            ViewBag.Genero = CarregarGenero(conn);
+            ViewBag.Genero = CarregarGenero(conn3);
 
             return View(lista);
 
@@ -109,34 +112,27 @@ namespace Cinema.Controllers
                     while (reader.Read())
                     {
                         premiacao.Add((
-                            reader.IsDBNull(reader.GetOrdinal("nomePremio"))
-                                ? null
-                                : reader.GetString(reader.GetOrdinal("nomePremio")),
 
-                            reader.IsDBNull(reader.GetOrdinal("nomeGen"))
-                                ? null
-                                : reader.GetString(reader.GetOrdinal("nomeGen")),
+                        reader.IsDBNull(reader.GetOrdinal("nomeGen")) ? null : reader.GetString(reader.GetOrdinal("nomeGen")),        // Genero (Item1)
+                        reader.IsDBNull(reader.GetOrdinal("nome")) ? null : reader.GetString(reader.GetOrdinal("nome")),              // Diretor (Item2)
+                        reader.IsDBNull(reader.GetOrdinal("nomePremio")) ? null : reader.GetString(reader.GetOrdinal("nomePremio")), // Premiação (Item3)
+                        reader.IsDBNull(reader.GetOrdinal("id_premiacao")) ? "?" : reader.GetInt32(reader.GetOrdinal("id_premiacao")).ToString() // codpremiacao (Item4)
 
-                            reader.IsDBNull(reader.GetOrdinal("nome"))
-                                ? null
-                                : reader.GetString(reader.GetOrdinal("nome")),
-
-                            reader.IsDBNull(reader.GetOrdinal("id_premiacao"))
-                                ? "?"
-                                : reader.GetInt32(reader.GetOrdinal("id_premiacao")).ToString())
-
-
-                        );
+                        ));
                     }
 
                 }
             }
+
+
+
 
             ViewBag.Participacoes = premiacao;
             return View(filmes);
         }
 
         [HttpGet]
+        [SessionAuthorize(RoleAnyOf = "admin,gerente")]
         public IActionResult Criar()
         {
             using var conn = db.GetConnection();
@@ -157,12 +153,13 @@ namespace Cinema.Controllers
         }
 
         [HttpGet]
-        public IActionResult Editar(int id)
+        [SessionAuthorize(RoleAnyOf = "admin,gerente")]
+        public IActionResult Editar(int id_premiacao)
         {
             Premiacoes? premiacao = null;
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("select id_premiacao, id_filme, nomePremiacao from Premiacoes where id_premiacao = @id", conn);
-            cmd.Parameters.AddWithValue("@id", id);
+            using var cmd = new MySqlCommand("select id_premiacao, id_filme, nomePremio from Premiacoes where id_premiacao = @id", conn);
+            cmd.Parameters.AddWithValue("@id", id_premiacao);
             var rd = cmd.ExecuteReader();
 
             if(rd.Read())
@@ -171,30 +168,31 @@ namespace Cinema.Controllers
 
                     id_premiacoes = rd.GetInt32("id_premiacao"),
                     filme = rd.GetInt32("id_filme"),
-                    premio = rd.GetString("nomePremiacao")
+                    premio = rd.GetString("nomePremio")
                 } ;
             }
 
-
-            ViewBag.Filme = CarregarFilme(conn);
+            using var conn2 = db.GetConnection();
+            ViewBag.Filme = CarregarFilme(conn2);
 
             return View( premiacao);
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public  IActionResult Editar(int id, Premiacoes premio)
+        public  IActionResult Editar(int id_premiacao, Premiacoes premiacao)
         {
             using var conn = db.GetConnection();
             using var cmd = new MySqlCommand("editar_premiacao", conn) { CommandType = CommandType.StoredProcedure };
-            cmd.Parameters.AddWithValue("p_nomePremio", premio.premio);
-            cmd.Parameters.AddWithValue("p_filme", premio.filme);
-            cmd.Parameters.AddWithValue("p_id", premio.id_premiacoes);
+            cmd.Parameters.AddWithValue("p_nomePremio", premiacao.premio);
+            cmd.Parameters.AddWithValue("p_filme", premiacao.filme);
+            cmd.Parameters.AddWithValue("p_id", id_premiacao);
             cmd.ExecuteNonQuery();
 
             return View();
         }
 
         [HttpPost]
+        [SessionAuthorize(RoleAnyOf = "admin,gerente")]
         public IActionResult Excluir(int id)
         {
             try

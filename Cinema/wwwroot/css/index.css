@@ -1,0 +1,104 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.btn-criar {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.form-busca {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.input-text,
+.select-genero {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+.btn-buscar {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .btn-buscar:hover {
+        background-color: #218838;
+    }
+
+.lista-filmes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.filme-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filme-capa .capa-img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.sem-capa {
+    font-style: italic;
+    color: #999;
+}
+
+.filme-info {
+    flex: 1;
+}
+
+.titulo-filme {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+}
+
+.mensagem-vazia {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+}

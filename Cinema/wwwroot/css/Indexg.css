@@ -1,0 +1,137 @@
+﻿{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Container principal */
+.index-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Título */
+.index-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Botão de cadastro */
+.btn-cadastrar {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-cadastrar:hover {
+        background-color: #0056b3;
+    }
+
+/* Formulário de busca/filtro */
+.index-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+    .index-form input,
+    .index-form select,
+    .index-form button {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    .index-form button {
+        background-color: #28a745;
+        color: white;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .index-form button:hover {
+            background-color: #1e7e34;
+        }
+
+/* Tabela */
+.index-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .index-table th,
+    .index-table td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .index-table th {
+        background-color: #f1f1f1;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .index-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+/* Ações */
+.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-editar {
+    background-color: #17a2b8;
+}
+
+    .btn-editar:hover {
+        background-color: #11707f;
+    }
+
+.btn-excluir {
+    background-color: #dc3545;
+}
+
+    .btn-excluir:hover {
+        background-color: #a71d2a;
+    }
+
+/* Mensagem de vazio */
+.msg-vazio {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}

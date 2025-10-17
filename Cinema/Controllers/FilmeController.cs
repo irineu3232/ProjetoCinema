@@ -1,4 +1,5 @@
-﻿using Cinema.Data;
+﻿using Cinema.Autenticao;
+using Cinema.Data;
 using Cinema.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,6 +10,7 @@ using ZstdSharp.Unsafe;
 
 namespace Cinema.Controllers
 {
+    [SessionAuthorize(RoleAnyOf = "admin,gerente")]
     public class FilmeController : Controller
     {
         private readonly Database db = new Database();

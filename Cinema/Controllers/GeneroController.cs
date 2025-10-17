@@ -1,4 +1,5 @@
-﻿using Cinema.Data;
+﻿using Cinema.Autenticao;
+using Cinema.Data;
 using Cinema.Models;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
@@ -6,6 +7,7 @@ using System.Data;
 
 namespace Cinema.Controllers
 {
+    [SessionAuthorize(RoleAnyOf = "admin,gerente")]
     public class GeneroController : Controller
     {
         private readonly Database db = new Database();

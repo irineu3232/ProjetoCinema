@@ -29,7 +29,7 @@ namespace Cinema.Controllers
             }
 
             using var conn = db.GetConnection();
-            using var cmd = new MySqlCommand("buscar_usuario_login") { CommandType = CommandType.StoredProcedure };
+            using var cmd = new MySqlCommand("buscar_usuario_login", conn) { CommandType = CommandType.StoredProcedure };
             cmd.Parameters.AddWithValue("u_email", email);
 
             using var rd = cmd.ExecuteReader();

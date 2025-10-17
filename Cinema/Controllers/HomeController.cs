@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Cinema.Models;
-
+using Cinema.Autenticao;
 namespace Cinema.Controllers;
 
 public class HomeController : Controller
@@ -15,6 +15,9 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        if (!HttpContext.Session.GetInt32(SessionKey.UserId).HasValue)
+            return RedirectToAction("Login", "Auth");
+
         return View();
     }
 

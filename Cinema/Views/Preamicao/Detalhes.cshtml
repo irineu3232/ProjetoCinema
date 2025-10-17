@@ -1,53 +1,68 @@
 ﻿@model Cinema.Models.Filme
+@using Cinema.Autenticao;
+
 @{
     var info = ViewBag.Participacoes as List<(string Genero, string Diretor, string Premiacao, string codpremiacao)>;
-    var role = Context.Session.GetString(Cinema.Autenticao.SessionKey.UserRole);
+    var role = Context.Session.GetString(SessionKey.UserRole);
 }
 
-<h2>Detalhes de premiações do Filme</h2>
+<link rel="stylesheet" href="~/css/detalhes.css" />
 
-<h2>@Model.titulos</h2>
+<div class="container-detalhes">
 
+    <h2 class="titulo-detalhes">Detalhes de premiações do Filme</h2>
+    <h2 class="titulo-detalhes">@Model.titulos</h2>
 
-@if (info != null && info.Any())
-{
-    <table>
-        <tr>
-            <th>Genero</th>
-            <th>Diretor</th>
-            <th>Premiação</th>
-        </tr>
+    <img src="~/@Model.capa" alt="@Model.titulos" class="imagem-filme" />
 
-        @foreach (var i in info)
-        {
-            <tr>
-                <td>@i.Genero</td>
-                <td>@i.Diretor</td>
-                <td>@i.Premiacao</td>
-                @if (role == "admin" || role == "gerente")
+    @if (info != null && info.Any())
+    {
+        var genero = info.First().Genero;
+        var diretor = info.First().Diretor;
+
+        <p class="info-filme"><strong>Gênero:</strong> @genero</p>
+        <p class="info-filme"><strong>Diretor:</strong> @diretor</p>
+
+        <table class="tabela-premiacoes">
+            <thead>
+                <tr>
+                    <th>Premiação</th>
+                    @if (role == "admin" || role == "gerente")
+                    {
+                        <th>Ações</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in info)
                 {
-                    <td>
-                        <div>
-                            <form asp-action="Editar">
-                                <input type="hidden" name="id" value="@i.codpremiacao" />
-                                <button type="submit">Editar Premiacação</button>
-                           </form>
+                    <tr>
+                        <td>@i.Premiacao</td>
+                        @if (role == "admin" || role == "gerente")
+                        {
+                            <td>
+                                <div>
+                                    <form asp-action="Editar" method="get" style="display:inline;">
+                                        <input type="hidden" name="id_premiacao" value="@i.codpremiacao" />
+                                        <button type="submit" class="btn-acao btn-editar">Editar</button>
+                                    </form>
 
-                            <form asp-action="Excluir">
-                            <input type="hidden" name="id" value="@i.codpremiacao" />
-                                <button type="submit">Excluir Premiação</button>
-                            </form>
-
-                        </div>
-                    </td>
+                                    <form asp-action="Excluir" method="post" onsubmit="return confirm('Deseja realmente excluir?');" style="display:inline;">
+                                        <input type="hidden" name="id" value="@i.codpremiacao" />
+                                        <button type="submit" class="btn-acao btn-excluir">Excluir</button>
+                                    </form>
+                                </div>
+                            </td>
+                        }
+                    </tr>
                 }
-            </tr>
-        }
-    </table>       
-}
-else
-{
-    <p>O filme em questão, não possui nenhuma premiação</p>
-}
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="info-filme">O filme em questão, não possui nenhuma premiação.</p>
+    }
 
-<p><a asp-action="Index">Voltar</a></p>
+    <p><a asp-action="Index" class="link-voltar">Voltar</a></p>
+</div>

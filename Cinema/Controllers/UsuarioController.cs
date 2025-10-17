@@ -4,9 +4,11 @@ using Cinema.Models;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Crypto.Generators;
+using Cinema.Autenticao;
 
 namespace Cinema.Controllers
 {
+    [SessionAuthorize(RoleAnyOf = "admin")]
     public class UsuarioController : Controller
     {
         private readonly Database db = new Database();

@@ -4,12 +4,20 @@
     box-sizing: border-box;
 }
 
+
+body{
+    background-color: black;
+}
+
+
 /* Título */
 .h {
     text-align: center;
     font-size: 28px;
     margin-bottom: 20px;
     font-family: Arial, sans-serif;
+    color:darkred;
+    font-weight:900;
 }
 
 /* Formulário */
@@ -19,7 +27,7 @@
     border: 2px solid #000;
     border-radius: 15px;
     padding: 25px;
-    background-color: #fff;
+    background-color: gray;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -40,6 +48,10 @@
     margin-bottom: 5px;
     font-weight: 500;
     color: black;
+    font-style:italic;
+    font-family:sans-serif;
+    font-size:1.2rem;
+    font-weight:900;
 }
 
 /* Input */
@@ -56,14 +68,16 @@
 /* Botão cadastrar */
 .b {
     border-radius: 15px;
-    background-color: rgb(76, 255, 0);
-    color: white;
+    background-color: lightgray;
+    color: black;
     font-size: 1.1rem;
-    padding: 8px 15px;
-    margin: 10px 5px;
-    width: 120px;
+    padding:3px;
+    margin:  5px;
+    width: 150px;
+    height:50px;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 2px solid;
 }
 
     .b:hover {
@@ -82,9 +96,10 @@
     padding: 8px 15px;
     margin: 10px 5px;
     color: black;
-    width: 120px;
+    width: 140px;
     text-align: center;
     transition: all 0.3s ease;
+    background-color:lightgray;
 }
 
     .a:hover {

@@ -5,27 +5,29 @@
 
 <link rel="stylesheet" href="~/css/login.css" />
 
-<section class="login-container">
-    <h2 class="login-title">Área de Login</h2>
+<body class="bod">
+    <section class="login-container">
+        <h2 class="login-title">Área de Login</h2>
 
-    @if (ViewBag.Error != null)
-    {
-        <div class="alert-error">@ViewBag.Error</div>
-    }
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert-error">@ViewBag.Error</div>
+        }
 
-    <form asp-action="Login" method="post" class="login-form">
-        @Html.AntiForgeryToken()
+        <form asp-action="Login" method="post" class="login-form">
+            @Html.AntiForgeryToken()
 
-        <div class="form-group">
-            <label class="form-label">E-mail:</label>
-            <input type="email" name="email" class="form-input" required />
-        </div>
+            <div class="form-group">
+                <label class="form-label">E-mail:</label>
+                <input type="email" name="email" class="form-input" required />
+            </div>
 
-        <div class="form-group">
-            <label class="form-label">Senha:</label>
-            <input type="password" name="senha" class="form-input" required />
-        </div>
+            <div class="form-group">
+                <label class="form-label">Senha:</label>
+                <input type="password" name="senha" class="form-input" required />
+            </div>
 
-        <button type="submit" class="btn-login">Entrar</button>
-    </form>
-</section>
+            <button type="submit" class="btn-login">Entrar</button>
+        </form>
+    </section>
+</body>

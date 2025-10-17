@@ -1,6 +1,6 @@
 ﻿body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: black;
     margin: 0;
     padding: 20px;
 }
@@ -8,19 +8,29 @@
 h2 {
     text-align: center;
     font-size: 28px;
-    color: #333;
+    color: darkred;
+    font-weight:900;
     margin-bottom: 30px;
 }
 
 .btn-criar {
     display: inline-block;
-    background-color: #007bff;
+    background-color: darkblue;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     margin-bottom: 20px;
     font-weight: bold;
+    transition: ease all;
+    transition-duration:0.3s;
+    transition-delay:0.1s;
+}
+
+.btn-criar:hover
+{
+    background-color: blue;
+    color:floralwhite;
 }
 
 .form-busca {
@@ -44,7 +54,7 @@ h2 {
     padding: 10px 20px;
     font-size: 15px;
     border: none;
-    background-color: #28a745;
+    background-color: gray;
     color: white;
     border-radius: 5px;
     cursor: pointer;

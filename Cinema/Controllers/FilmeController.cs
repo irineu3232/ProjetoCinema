@@ -107,7 +107,7 @@ namespace Cinema.Controllers
             cmd.Parameters.AddWithValue("f_capa",(object?) relPath ?? DBNull.Value);
             cmd.ExecuteNonQuery();
 
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
 

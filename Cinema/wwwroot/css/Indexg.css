@@ -1,12 +1,14 @@
-﻿{
+﻿*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+
 body {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f9f9f9;
+    background-color: black;
 }
 
 /* Container principal */
@@ -21,7 +23,8 @@ body {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2rem;
-    color: #333;
+    color: darkred;
+    font-weight:800;
 }
 
 /* Botão de cadastro */
@@ -29,7 +32,7 @@ body {
     display: inline-block;
     margin-bottom: 20px;
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #007b;
     color: #fff;
     border-radius: 6px;
     text-decoration: none;
@@ -37,7 +40,8 @@ body {
 }
 
     .btn-cadastrar:hover {
-        background-color: #0056b3;
+        background-color: darkblue;
+        color:floralwhite;
     }
 
 /* Formulário de busca/filtro */
@@ -58,7 +62,7 @@ body {
     }
 
     .index-form button {
-        background-color: #28a745;
+        background-color: darkblue;
         color: white;
         cursor: pointer;
         border: none;
@@ -66,7 +70,7 @@ body {
     }
 
         .index-form button:hover {
-            background-color: #1e7e34;
+            background-color:darkblue;
         }
 
 /* Tabela */
@@ -74,7 +78,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    background-color: white;
+    background-color: lightgray;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -87,7 +91,7 @@ body {
     }
 
     .index-table th {
-        background-color: #f1f1f1;
+        background-color: dimgray;
         font-weight: 600;
         color: #333;
     }

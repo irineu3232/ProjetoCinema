@@ -154,12 +154,12 @@ namespace Cinema.Controllers
 
         [HttpGet]
         [SessionAuthorize(RoleAnyOf = "admin,gerente")]
-        public IActionResult Editar(int id_premiacao)
+        public IActionResult Editar(int id_premiacoes)
         {
             Premiacoes? premiacao = null;
             using var conn = db.GetConnection();
             using var cmd = new MySqlCommand("select id_premiacao, id_filme, nomePremio from Premiacoes where id_premiacao = @id", conn);
-            cmd.Parameters.AddWithValue("@id", id_premiacao);
+            cmd.Parameters.AddWithValue("@id", id_premiacoes);
             var rd = cmd.ExecuteReader();
 
             if(rd.Read())
@@ -175,20 +175,20 @@ namespace Cinema.Controllers
             using var conn2 = db.GetConnection();
             ViewBag.Filme = CarregarFilme(conn2);
 
-            return View( premiacao);
+            return View(premiacao);
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public  IActionResult Editar(int id_premiacao, Premiacoes premiacao)
+        public  IActionResult Editar(int id_premiacoes, Premiacoes premiacao)
         {
             using var conn = db.GetConnection();
             using var cmd = new MySqlCommand("editar_premiacao", conn) { CommandType = CommandType.StoredProcedure };
             cmd.Parameters.AddWithValue("p_nomePremio", premiacao.premio);
             cmd.Parameters.AddWithValue("p_filme", premiacao.filme);
-            cmd.Parameters.AddWithValue("p_id", id_premiacao);
+            cmd.Parameters.AddWithValue("p_id", id_premiacoes);
             cmd.ExecuteNonQuery();
 
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
@@ -209,7 +209,7 @@ namespace Cinema.Controllers
             {
                 TempData["ok"] = ex.Message;
             }
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
 

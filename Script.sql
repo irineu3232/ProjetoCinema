@@ -3,6 +3,7 @@ drop database if exists dbCinema;
 create database dbCinema;
 use dbCinema;
 
+select *  from Usuario;
 
 create table Usuario (
 id int primary key auto_increment,

@@ -29,14 +29,18 @@
             align-items: center;
             padding: 10px 16px;
             border-bottom: 1px solid #eee;
-            background: #fff;
+            background-color: gray;
             position: sticky;
             top: 0
         }
 
             .topnav a {
                 text-decoration: none;
-                color: #111
+                color: darkred;
+                font-weight: 800;
+                padding:5px;
+                margin: 5px;
+                font-size: 1.2rem;
             }
 
 
@@ -76,24 +80,28 @@
         {
             <nav class="topnav">
                 <a asp-controller="Home" asp-action="Index">Página inicial</a>
-                @if(role == "admin" || role == "gerente")
+
+                @if (role == "admin" || role == "gerente")
                 {
                     <a asp-controller="Diretor" asp-action="Index">Diretores</a>
                     <a asp-controller="Filme" asp-action="Index">Filmes</a>
                     <a asp-controller="Genero" asp-action="Index">Generos</a>
-                }
+                                    }
+
 
                 @if (role == "admin")
                 {
-                    <a asp-controller="Usuario" asp-action="Index"></a>
+                    <a asp-controller="Usuario" asp-action="Index">Usuario</a>
+
                 }
+               
                 <a asp-controller="Preamicao" asp-action="Index">Premiações</a>
 
                 <span class="spacer"></span>
-                <span>Seja bem vindo, @userName</span>
+                <span style="font-size:1.2rem; color: darkred; font-weight:800; ">Seja bem vindo, @userName</span>
                 <form asp-controller="Auth" asp-action="Logout" method="post" style="display:inline">
                     @Html.AntiForgeryToken()
-                    <button type="submit" class="btn-link">Sair</button>
+                    <button type="submit" class="btn-danger">Sair</button>
                 </form>
             </nav>
         }

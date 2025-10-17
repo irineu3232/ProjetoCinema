@@ -1,75 +1,50 @@
 ﻿@model IEnumerable<Cinema.Models.Diretor>
 
+<link rel="stylesheet" href="~/css/Indexg.css" />
 
-<a asp-action="Criar"> Cadastrar Diretor</a>
+<div class="index-container">
 
-@if (Model.Any())
-{
-    <table class="">
+    <h2 class="index-title">Lista de Diretores</h2>
 
-        <thead>
+    <a asp-action="Criar" class="btn-cadastrar">Cadastrar Diretor</a>
 
-            <tr>
-
-                <th>Nome</th>
-
-                <th>Pais de Origem</th>
-
-
-                <th class="col-acoes">Ações</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            @foreach (var l in Model)
-
-            {
-
+    @if (Model.Any())
+    {
+        <table class="index-table">
+            <thead>
                 <tr>
-
-                    <td>@l.nome </td>
-
-                    <td>@l.pais_origem</td>
-
-
-                    <td>
-
-                        <div class="acoes">
-
-                            <form asp-action="Editar" method="get">
-
-                                <input type="hidden" name="id" value="@l.id_diretor" />
-
-                                <button type="submit" class="btn btn-editar">Editar</button>
-
-                            </form>
-
-                            <form asp-action="Excluir" method="post" onsubmit="return confirm('Excluir este livro?');">
-
-                                @Html.AntiForgeryToken()
-
-                                <input type="hidden" name="id" value="@l.id_diretor" />
-
-                                <button type="submit" class="btn btn-excluir">Excluir</button>
-
-                            </form>
-
-                        </div>
-
-                    </td>
-
+                    <th>Nome</th>
+                    <th>País de Origem</th>
+                    <th>Ações</th>
                 </tr>
+            </thead>
+            <tbody>
+                @foreach (var l in Model)
+                {
+                    <tr>
+                        <td>@l.nome</td>
+                        <td>@l.pais_origem</td>
+                        <td>
+                            <div class="acoes">
+                                <form asp-action="Editar" method="get">
+                                    <input type="hidden" name="id" value="@l.id_diretor" />
+                                    <button type="submit" class="btn btn-editar">Editar</button>
+                                </form>
+                                <form asp-action="Excluir" method="post" onsubmit="return confirm('Excluir este diretor?');">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@l.id_diretor" />
+                                    <button type="submit" class="btn btn-excluir">Excluir</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="msg-vazio">Nenhum diretor encontrado.</p>
+    }
 
-            }
-
-        </tbody>
-
-    </table>
-}
-else
-{
-    <p>Nenhum diretor encontrado</p>
-}
+</div>

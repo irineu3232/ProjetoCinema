@@ -3,34 +3,29 @@
     ViewData["Title"] = "Login";
 }
 
-<section>
-    <h2> Área de login</h2>
+<link rel="stylesheet" href="~/css/login.css" />
+
+<section class="login-container">
+    <h2 class="login-title">Área de Login</h2>
 
     @if (ViewBag.Error != null)
-
     {
-
         <div class="alert-error">@ViewBag.Error</div>
-
     }
 
-
-    <form asp-action="Login" method="post">
-
+    <form asp-action="Login" method="post" class="login-form">
         @Html.AntiForgeryToken()
 
-        <div>
-            <label>E-mail:</label>
-            <input type="email" name="email" required />
+        <div class="form-group">
+            <label class="form-label">E-mail:</label>
+            <input type="email" name="email" class="form-input" required />
         </div>
 
-        <div>
-            <label>Senha</label>
-            <input type="password" name="senha" required/>
+        <div class="form-group">
+            <label class="form-label">Senha:</label>
+            <input type="password" name="senha" class="form-input" required />
         </div>
 
-        <button type="submit">Entrar</button>
+        <button type="submit" class="btn-login">Entrar</button>
     </form>
-
-
 </section>

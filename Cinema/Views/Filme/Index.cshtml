@@ -1,84 +1,62 @@
 ﻿@model IEnumerable<Cinema.Models.Filme>
 
-    @{
-        // Trás as viewBags e transforma em uma lista
-    var diretores = ViewBag.Diretor as List<Cinema.Models.Diretor>; 
+<link rel="stylesheet" href="~/css/indexg.css" />
+
+@{
+    // Ele pega da viewBag as informações, transformando as em lista e inserindo em variaveis
+    var diretores = ViewBag.Diretor as List<Cinema.Models.Diretor>;
     var generos = ViewBag.Genero as List<Cinema.Models.Genero>;
-    }
+}
 
-<a asp-action="Criar"> Cadastrar Filme</a>
-@if (Model.Any())
-{
+<div class="index-container">
+    <h2 class="index-title">Filmes Cadastrados</h2>
 
-    <table class="">
+    <a asp-action="Criar" class="btn-cadastrar">Cadastrar Filme</a>
 
-        <thead>
-
-            <tr>
-                <th>Capa</th>
-
-                <th>Titulo</th>
-
-                <th>Genero</th>
-
-                <th>Diretor</th>
-
-                <th class="col-acoes">Ações</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            @foreach (var l in Model)
-            {
-                // Transforma as litas em variaveis, além de traser o diretor e genero de acordo com aquele id que está no filme
-                var diretor = diretores.FirstOrDefault(d => d.id_diretor == l.id_diretor);
-                var genero = generos.FirstOrDefault(g => g.id_gen == l.genero);
+    @if (Model.Any())
+    {
+        <table class="index-table">
+            <thead>
                 <tr>
-
-                    <td><img  src="~/@l.capa" alt="@l.titulos"/></td>
-                    <td>@l.titulos</td>
-                    <td>@(genero != null ? genero.nomeGen : "Desconhecido")</td>
-
-                    <td>@(diretor != null ? diretor.nome : "Desconhecido")</td>
-
-                    <td>
-
-                        <div class="acoes">
-
-                            <form asp-action="Editar" method="get">
-
-                                <input type="hidden" name="id_filme" value="@l.id_filme" />
-
-                                <button type="submit" class="btn btn-editar">Editar</button>
-
-                            </form>
-
-                            <form asp-action="Excluir" method="post" onsubmit="return confirm('Excluir este livro?');">
-
-                                @Html.AntiForgeryToken()
-
-                                <input type="hidden" name="id_filme" value="@l.id_filme" />
-
-                                <button type="submit" class="btn btn-excluir">Excluir</button>
-
-                            </form>
-
-                        </div>
-
-                    </td>
-
+                    <th>Capa</th>
+                    <th>Título</th>
+                    <th>Gênero</th>
+                    <th>Diretor</th>
+                    <th>Ações</th>
                 </tr>
-
-            }
-
-        </tbody>
-
-    </table>
-}
-else
-{
-    <p>Nenhum filme encontrado</p>
-}
+            </thead>
+            <tbody>
+                @foreach (var l in Model)
+                {
+                    var diretor = diretores.FirstOrDefault(d => d.id_diretor == l.id_diretor);
+                    var genero = generos.FirstOrDefault(g => g.id_gen == l.genero);
+                    <tr>
+                        <td>
+                            <img src="~/@l.capa" alt="@l.titulos" class="filme-capa" />
+                        </td>
+                        <td>@l.titulos</td>
+                        <td>@(genero != null ? genero.nomeGen : "Desconhecido")</td>
+                        <td>@(diretor != null ? diretor.nome : "Desconhecido")</td>
+                        <td>
+                            <div class="acoes">
+                                <form asp-action="Editar" method="get">
+                                    <input type="hidden" name="id_filme" value="@l.id_filme" />
+                                    <button type="submit" class="btn btn-editar">Editar</button>
+                                </form>
+                                <form asp-action="Excluir" method="post" onsubmit="return confirm('Excluir este filme?');">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id_filme" value="@l.id_filme" />
+                                    <button type="submit" class="btn btn-excluir">Excluir</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="msg-vazio">Nenhum filme encontrado.</p>
+    }
+</div>

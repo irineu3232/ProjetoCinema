@@ -6,63 +6,63 @@
     var role = Context.Session.GetString(SessionKey.UserRole);
 }
 
-<h2>Detalhes de premiações do Filme</h2>
-<h2> @Model.titulos</h2>
-<img src="~/@Model.capa" alt="teste" />
+<link rel="stylesheet" href="~/css/detalhes.css" />
 
-@if (info != null && info.Any())
-{
-    // Como todas as premiações são do mesmo filme, pegamos o diretor e gênero da primeira ocorrência
-    // Vai pegar o primeiro item da lista relacionada a Genero e a Diretor
-    var genero = info.First().Genero;
-    var diretor = info.First().Diretor;
+<div class="container-detalhes">
 
-    <p><strong>Gênero:</strong> @genero</p>
-    <p><strong>Diretor:</strong> @diretor</p>
+    <h2 class="titulo-detalhes">Detalhes de premiações do Filme</h2>
+    <h2 class="titulo-detalhes">@Model.titulos</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Premiação</th>
-                @if (role == "admin" || role == "gerente")
-                {
-                    <th>Ações</th>
-                }
-               
-                
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var i in info)
-            {
+    <img src="~/@Model.capa" alt="@Model.titulos" class="imagem-filme" />
+
+    @if (info != null && info.Any())
+    {
+        var genero = info.First().Genero;
+        var diretor = info.First().Diretor;
+
+        <p class="info-filme"><strong>Gênero:</strong> @genero</p>
+        <p class="info-filme"><strong>Diretor:</strong> @diretor</p>
+
+        <table class="tabela-premiacoes">
+            <thead>
                 <tr>
-                    <td>@i.Premiacao</td>
-                    
+                    <th>Premiação</th>
                     @if (role == "admin" || role == "gerente")
                     {
-                        <td>
-                            <div>
-                                <form asp-action="Editar" method="get">
-                                    <input type="hidden" name="id_premiacao" value="@i.codpremiacao" />
-                                    <button type="submit">Editar Premiação</button>
-                                </form>
-
-                                <form asp-action="Excluir" method="post" onsubmit="return confirm('Deseja realmente excluir?');">
-                                    <input type="hidden" name="id" value="@i.codpremiacao" />
-                                    <button type="submit">Excluir Premiação</button>
-                                </form>
-                            </div>
-                        </td>
-
-                    }                    
+                        <th>Ações</th>
+                    }
                 </tr>
-            }
-        </tbody>
-    </table>
-}
-else
-{
-    <p>O filme em questão, não possui nenhuma premiação.</p>
-}
+            </thead>
+            <tbody>
+                @foreach (var i in info)
+                {
+                    <tr>
+                        <td>@i.Premiacao</td>
+                        @if (role == "admin" || role == "gerente")
+                        {
+                            <td>
+                                <div>
+                                    <form asp-action="Editar" method="get" style="display:inline;">
+                                        <input type="hidden" name="id_premiacao" value="@i.codpremiacao" />
+                                        <button type="submit" class="btn-acao btn-editar">Editar</button>
+                                    </form>
 
-<p><a asp-action="Index">Voltar</a></p>
+                                    <form asp-action="Excluir" method="post" onsubmit="return confirm('Deseja realmente excluir?');" style="display:inline;">
+                                        <input type="hidden" name="id" value="@i.codpremiacao" />
+                                        <button type="submit" class="btn-acao btn-excluir">Excluir</button>
+                                    </form>
+                                </div>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="info-filme">O filme em questão, não possui nenhuma premiação.</p>
+    }
+
+    <p><a asp-action="Index" class="link-voltar">Voltar</a></p>
+</div>

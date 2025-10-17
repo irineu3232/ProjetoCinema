@@ -1,78 +1,51 @@
 ﻿@model IEnumerable<Cinema.Models.Usuario>
 
+<link rel="stylesheet" href="~/css/Indexg.css" />
 
-    <a asp-action="Criar"> Cadastrar Usuário</a>
-@if (Model.Any())
-{
+<div class="index-container">
+    <h2 class="index-title">Usuários Cadastrados</h2>
 
-    <table class="">
+    <a asp-action="Criar" class="btn-cadastrar">Cadastrar Usuário</a>
 
-        <thead>
-
-            <tr>
-
-                <th>Nome</th>
-
-                <th>Email</th>
-
-                <th>Cargo</th>
-
-
-                <th class="col-acoes">Ações</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            @foreach (var l in Model)
-
-            {
-
+    @if (Model.Any())
+    {
+        <table class="index-table">
+            <thead>
                 <tr>
-
-                    <td>@l.Nome </td>
-
-                    <td>@l.Email</td>
-
-                    <td>@l.role</td>
-
-                    <td>
-
-                        <div class="acoes">
-
-                            <form asp-action="Editar" method="get">
-
-                                <input type="hidden" name="id" value="@l.id" />
-
-                                <button type="submit" class="btn btn-editar">Editar</button>
-
-                            </form>
-
-                            <form asp-action="Excluir" method="post" onsubmit="return confirm('Excluir este livro?');">
-
-                                @Html.AntiForgeryToken()
-
-                                <input type="hidden" name="id" value="@l.id" />
-
-                                <button type="submit" class="btn btn-excluir">Excluir</button>
-
-                            </form>
-
-                        </div>
-
-                    </td>
-
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Cargo</th>
+                    <th class="col-acoes">Ações</th>
                 </tr>
+            </thead>
+            <tbody>
+                @foreach (var l in Model)
+                {
+                    <tr>
+                        <td>@l.Nome</td>
+                        <td>@l.Email</td>
+                        <td>@l.role</td>
+                        <td>
+                            <div class="acoes">
+                                <form asp-action="Editar" method="get">
+                                    <input type="hidden" name="id" value="@l.id" />
+                                    <button type="submit" class="btn btn-editar">Editar</button>
+                                </form>
 
-            }
-
-        </tbody>
-
-    </table>
-}
-else
-{
-    <p> Nenhum usuário cadastrado</p>
-}
+                                <form asp-action="Excluir" method="post" onsubmit="return confirm('Excluir este usuário?');">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@l.id" />
+                                    <button type="submit" class="btn btn-excluir">Excluir</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="msg-vazio">Nenhum usuário cadastrado</p>
+    }
+</div>

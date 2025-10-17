@@ -7,61 +7,59 @@
     var role = Context.Session.GetString(SessionKey.UserRole);
 }
 
+<link rel="stylesheet" href="~/css/index.css" />
+
 @if (role == "admin" || role == "gerente")
 {
-    <a asp-action="Criar">Cadastrar Premiação</a>
+    <a asp-action="Criar" class="btn-criar">Cadastrar Premiação</a>
 }
 
 <h2>Lista de Filmes Premiados</h2>
 
-<form method="get" asp.action="Index">
-    <input list="filmes" name="q" value="@ViewBag.q" placeholder="Buscar por titulo" />
-    <datalist>
+<form method="get" asp-action="Index" class="form-busca">
+    <input list="filmes" name="q" value="@ViewBag.q" placeholder="Buscar por título" class="input-text" />
+    <datalist id="filmes">
         @if (ViewBag.Titulos is IEnumerable<string> ts)
         {
-            foreach(var t in ts)
+            foreach (var t in ts)
             {
-                <option value="t"></option>
+                <option value="@t"></option>
             }
         }
     </datalist>
 
-    <select name="g" asp-items="ViewBag.Genero">
+    <select name="g" asp-items="ViewBag.Genero" class="select-genero">
         <option value="">(selecione o gênero do filme)</option>
     </select>
 
-    <button type="submit">Buscar</button>
+    <button type="submit" class="btn-buscar">Buscar</button>
 </form>
 
 @if (Model.Any())
 {
-    <div>
+    <div class="lista-filmes">
         @foreach (var l in Model)
         {
-            <div>
-                <div>
+            <div class="filme-card">
+                <div class="filme-capa">
                     @if (!string.IsNullOrWhiteSpace(l.capa))
                     {
-                        <img src="~/@l.capa" alt="@l.titulos" />
+                        <img src="~/@l.capa" alt="@l.titulos" class="capa-img" />
                     }
                     else
                     {
-                        <span style="color:#aaa">Sem capa</span>
+                        <span class="sem-capa">Sem capa</span>
                     }
                 </div>
-                <div>
-
-                    <a asp-action="Detalhes" asp-route-id="@l.id_filme">@l.titulos</a>
+                <div class="filme-info">
+                    <a asp-action="Detalhes" asp-route-id="@l.id_filme" class="titulo-filme">@l.titulos</a>
                     <input type="hidden" value="@l.id_filme" />
                 </div>
-
             </div>
         }
-
     </div>
-
 }
 else
 {
-    <p>Nenhum filme premiado encontrado</p>
+    <p class="mensagem-vazia">Nenhum filme premiado encontrado</p>
 }

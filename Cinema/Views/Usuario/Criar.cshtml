@@ -8,7 +8,9 @@
 
 }
 
-<h2 class=" text-center;">Novo Usuario</h2>
+<link href="~/css/criar.css" rel="stylesheet" />
+
+<h2 class="h">Novo Usuario</h2>
 
 <link href="~/css/acoes.css" rel="stylesheet" />
 
@@ -27,7 +29,7 @@
         <label class="l"> Email</label>
         <input type="email" asp-for="Email" required class="i"/>
     </div>
-
+   
     <div class="d">
         <label class="l">Senha:</label>
         <input type="password" asp-for="Senha" required  class="i"/>
@@ -49,7 +51,7 @@
 
 
 
-    <button type="submit">Cadastrar</button>
-    <a asp-action="Index">Voltar</a>
+    <button type="submit" class="b">Cadastrar</button>
+    <a asp-action="Index" class="a">Voltar</a>
 
 </form>

@@ -1,0 +1,107 @@
+﻿/* Reset básico */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Container geral */
+.container-detalhes {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+/* Título */
+.titulo-detalhes {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+/* Imagem do filme */
+.imagem-filme {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Parágrafos */
+.info-filme {
+    font-size: 1.1rem;
+    margin: 5px 0 15px 0;
+}
+
+/* Tabela */
+.tabela-premiacoes {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .tabela-premiacoes th,
+    .tabela-premiacoes td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .tabela-premiacoes th {
+        background-color: #eee;
+        font-weight: bold;
+    }
+
+    .tabela-premiacoes tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+
+/* Botões de ação */
+.btn-acao {
+    margin: 5px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.btn-editar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-excluir {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-acao:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+/* Link voltar */
+.link-voltar {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #ddd;
+    color: black;
+    transition: 0.3s;
+}
+
+    .link-voltar:hover {
+        background-color: #aaa;
+        color: white;
+    }

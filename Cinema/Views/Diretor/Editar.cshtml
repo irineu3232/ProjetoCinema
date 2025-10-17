@@ -8,9 +8,11 @@
 
 }
 
-<h2 class=" text-center;">Editar Diretor</h2>
 
-<link href="~/css/acoes.css" rel="stylesheet" />
+<link href="~/css/criar.css" rel="stylesheet" />
+
+<h2 class="h">Editar Diretor</h2>
+
 
 <form asp-action="Editar" method="post" class="f">
 
@@ -29,7 +31,7 @@
         <input asp-for="pais_origem" required class="i" />
     </div>
 
-    <button type="submit">Editar</button>
-    <a asp-action="Index">Voltar</a>
+    <button type="submit" class="b">Editar</button>
+    <a asp-action="Index" class="a">Voltar</a>
 
 </form>

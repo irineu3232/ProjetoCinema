@@ -1,73 +1,47 @@
 ﻿@model IEnumerable<Cinema.Models.Genero>
 
+<link rel="stylesheet" href="~/css/Indexg.css" />
 
-<a asp-action="Criar"> Cadastrar Genero</a>
+<div class="index-container">
+    <h2 class="index-title">Gêneros Cadastrados</h2>
 
-@if(Model.Any())
-{
+    <a asp-action="Criar" class="btn-cadastrar">Cadastrar Gênero</a>
 
-    <table class="">
-
-        <thead>
-
-            <tr>
-
-                <th>Genero</th>
-
-
-
-                <th class="col-acoes">Ações</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            @foreach (var l in Model)
-
-            {
-
+    @if (Model.Any())
+    {
+        <table class="index-table">
+            <thead>
                 <tr>
-
-                    <td>@l.nomeGen</td>
-
-                    
-                    <td>
-
-                        <div class="acoes">
-
-                            <form asp-action="Editar" method="get">
-
-                                <input type="hidden" name="id_gen" value="@l.id_gen" />
-
-                                <button type="submit" class="btn btn-editar">Editar</button>
-
-                            </form>
-
-                            <form asp-action="Excluir" method="post" onsubmit="return confirm('Excluir este livro?');">
-
-                                @Html.AntiForgeryToken()
-
-                                <input type="hidden" name="id" value="@l.id_gen" />
-
-                                <button type="submit" class="btn btn-excluir">Excluir</button>
-
-                            </form>
-
-                        </div>
-
-                    </td>
-
+                    <th>Gênero</th>
+                    <th>Ações</th>
                 </tr>
+            </thead>
+            <tbody>
+                @foreach (var l in Model)
+                {
+                    <tr>
+                        <td>@l.nomeGen</td>
+                        <td>
+                            <div class="acoes">
+                                <form asp-action="Editar" method="get">
+                                    <input type="hidden" name="id_gen" value="@l.id_gen" />
+                                    <button type="submit" class="btn btn-editar">Editar</button>
+                                </form>
 
-            }
-
-        </tbody>
-
-    </table>
-}
-else
-{
-        <p>Nenhuma genero de filme encontrada </p>
-}
+                                <form asp-action="Excluir" method="post" onsubmit="return confirm('Excluir este gênero?');">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="id" value="@l.id_gen" />
+                                    <button type="submit" class="btn btn-excluir">Excluir</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="msg-vazio">Nenhum gênero de filme encontrado.</p>
+    }
+</div>

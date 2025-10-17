@@ -8,9 +8,12 @@
 
 }
 
-<h2 class=" text-center;">Novo Diretor</h2>
 
-<link href="~/css/acoes.css" rel="stylesheet" />
+<link href="~/css/criar.css" rel="stylesheet" />
+
+<h2 class=" h">Novo Diretor</h2>
+
+
 
 <form asp-action="Criar" method="post" class="f">
 
@@ -28,6 +31,6 @@
         <input asp-for="pais_origem"   required class="i"/>
     </div>
 
-    <button type="submit">Cadastrar</button>
-    <a asp-action="Index">Voltar</a>
+    <button type="submit" class="b">Cadastrar</button>
+    <a asp-action="Index" class="a">Voltar</a>
 </form>
